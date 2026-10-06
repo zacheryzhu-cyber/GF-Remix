@@ -1,0 +1,17 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Natural Earth source cached by scripts/generate_coastline.cjs
+scripts/.ne_50m_land.geojson
+
+# Export archives and temporary bundles
+*_export/
+*_export_patch/
+*.tar.gz
+

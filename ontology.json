@@ -1,0 +1,1732 @@
+[
+  {
+    "subject": "CHW-P-01",
+    "predicate": "hasHistoricalCase",
+    "object": "Case_CHW_P01_2025_Cavitation"
+  },
+  {
+    "subject": "Case_CHW_P01_2025_Cavitation",
+    "predicate": "rdf:type",
+    "object": "HistoricalCase"
+  },
+  {
+    "subject": "Case_CHW_P01_2025_Cavitation",
+    "predicate": "hasSymptom",
+    "object": "High impeller vibration (>4.5 mm/s) and suction cavitation noise"
+  },
+  {
+    "subject": "Case_CHW_P01_2025_Cavitation",
+    "predicate": "hasRootCause",
+    "object": "Suction strainer clogging causing low NPSHa and severe cavitation"
+  },
+  {
+    "subject": "Case_CHW_P01_2025_Cavitation",
+    "predicate": "hasMitigation",
+    "object": "Switched to standby pump CHW-P-02 and cleaned basket strainer ST-01"
+  },
+  {
+    "subject": "CHW-P-01",
+    "predicate": "hasHistoricalCase",
+    "object": "Case_CHW_P01_2026_MechanicalSealLeak"
+  },
+  {
+    "subject": "Case_CHW_P01_2026_MechanicalSealLeak",
+    "predicate": "rdf:type",
+    "object": "HistoricalCase"
+  },
+  {
+    "subject": "Case_CHW_P01_2026_MechanicalSealLeak",
+    "predicate": "hasSymptom",
+    "object": "Continuous seal flush fluid leakage (>50 ml/min) at shaft sleeve"
+  },
+  {
+    "subject": "Case_CHW_P01_2026_MechanicalSealLeak",
+    "predicate": "hasRootCause",
+    "object": "Thermal shock on silicon carbide primary seal faces during rapid restart"
+  },
+  {
+    "subject": "Case_CHW_P01_2026_MechanicalSealLeak",
+    "predicate": "hasMitigation",
+    "object": "Replaced mechanical seal cartridge and updated SOP soft-start ramp rate"
+  },
+  {
+    "subject": "A-01",
+    "predicate": "monitoredAsset",
+    "object": "MCC-01"
+  },
+  {
+    "subject": "A-01",
+    "predicate": "sensedCondition",
+    "object": "GroundFault"
+  },
+  {
+    "subject": "A-02",
+    "predicate": "monitoredAsset",
+    "object": "CHW-P-05"
+  },
+  {
+    "subject": "A-02",
+    "predicate": "sensedCondition",
+    "object": "LossOfPower"
+  },
+  {
+    "subject": "A-03",
+    "predicate": "monitoredAsset",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "A-03",
+    "predicate": "sensedCondition",
+    "object": "LossOfPressure"
+  },
+  {
+    "subject": "A-04",
+    "predicate": "monitoredAsset",
+    "object": "CHW-HX-01"
+  },
+  {
+    "subject": "A-04",
+    "predicate": "sensedCondition",
+    "object": "LossOfCoolantFlow"
+  },
+  {
+    "subject": "A-05",
+    "predicate": "monitoredAsset",
+    "object": "CHW-AHU-01"
+  },
+  {
+    "subject": "A-05",
+    "predicate": "sensedCondition",
+    "object": "LossOfCoolantFlow"
+  },
+  {
+    "subject": "A-06",
+    "predicate": "monitoredAsset",
+    "object": "TOOL-LITHO-01"
+  },
+  {
+    "subject": "A-06",
+    "predicate": "sensedCondition",
+    "object": "ThermalDrift"
+  },
+  {
+    "subject": "A-07",
+    "predicate": "monitoredAsset",
+    "object": "TOOL-CMP-01"
+  },
+  {
+    "subject": "A-07",
+    "predicate": "sensedCondition",
+    "object": "LossOfPlatenCooling"
+  },
+  {
+    "subject": "A-08",
+    "predicate": "monitoredAsset",
+    "object": "TOOL-CMP-02"
+  },
+  {
+    "subject": "A-08",
+    "predicate": "sensedCondition",
+    "object": "CarrierHeadOverheat"
+  },
+  {
+    "subject": "ElectricalBus",
+    "predicate": "providesOutput",
+    "object": "ElectricalPower"
+  },
+  {
+    "subject": "BackupPower",
+    "predicate": "providesOutput",
+    "object": "ElectricalPower"
+  },
+  {
+    "subject": "Pump",
+    "predicate": "requiresInput",
+    "object": "ElectricalPower"
+  },
+  {
+    "subject": "Pump",
+    "predicate": "providesOutput",
+    "object": "HydraulicPressure"
+  },
+  {
+    "subject": "Header",
+    "predicate": "requiresInput",
+    "object": "HydraulicPressure"
+  },
+  {
+    "subject": "Header",
+    "predicate": "providesOutput",
+    "object": "CoolantFlow"
+  },
+  {
+    "subject": "HeatExchanger",
+    "predicate": "requiresInput",
+    "object": "CoolantFlow"
+  },
+  {
+    "subject": "HeatExchanger",
+    "predicate": "providesOutput",
+    "object": "ThermalRejection"
+  },
+  {
+    "subject": "AirHandlingUnit",
+    "predicate": "requiresInput",
+    "object": "CoolantFlow"
+  },
+  {
+    "subject": "AirHandlingUnit",
+    "predicate": "providesOutput",
+    "object": "AirCooling"
+  },
+  {
+    "subject": "LithoTool",
+    "predicate": "requiresInput",
+    "object": "ThermalRejection"
+  },
+  {
+    "subject": "LithoTool",
+    "predicate": "providesOutput",
+    "object": "WaferExposure"
+  },
+  {
+    "subject": "CmpTool",
+    "predicate": "requiresInput",
+    "object": "ThermalRejection"
+  },
+  {
+    "subject": "CmpTool",
+    "predicate": "providesOutput",
+    "object": "WaferPolishing"
+  },
+  {
+    "subject": "EtchTool",
+    "predicate": "requiresInput",
+    "object": "ThermalRejection"
+  },
+  {
+    "subject": "EtchTool",
+    "predicate": "providesOutput",
+    "object": "WaferEtching"
+  },
+  {
+    "subject": "ElectricalPower",
+    "predicate": "governedByLaw",
+    "object": "Joule_Ohm_Law [P = sqrt(3)*V*I*cosPhi]"
+  },
+  {
+    "subject": "HydraulicPressure",
+    "predicate": "governedByLaw",
+    "object": "Bernoulli_Pump_Head [dP = rho*g*H]"
+  },
+  {
+    "subject": "CoolantFlow",
+    "predicate": "governedByLaw",
+    "object": "Continuity_Equation [Q = Area * v]"
+  },
+  {
+    "subject": "ThermalRejection",
+    "predicate": "governedByLaw",
+    "object": "First_Law_Thermodynamics [Q_dot = m_dot*Cp*dT]"
+  },
+  {
+    "subject": "AirCooling",
+    "predicate": "governedByLaw",
+    "object": "Psychrometric_Enthalpy [q = m_air*dh]"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "carriesMedium",
+    "object": "415V_3Phase_AC"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "nominalRating",
+    "object": "415V / 1200A [500kVA]"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "failureDelay",
+    "object": "Instantaneous (<50ms)"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "hazardLevel",
+    "object": "Cat-4 Arc Flash (40 cal/cm2)"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "carriesMedium",
+    "object": "415V_3Phase_AC"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "nominalRating",
+    "object": "415V / 1200A [500kVA]"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "failureDelay",
+    "object": "Instantaneous (<50ms)"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "hazardLevel",
+    "object": "Cat-4 Arc Flash (40 cal/cm2)"
+  },
+  {
+    "subject": "CHW-P-05",
+    "predicate": "carriesMedium",
+    "object": "CHW_Hydraulic_Mass"
+  },
+  {
+    "subject": "CHW-P-05",
+    "predicate": "nominalRating",
+    "object": "1500 GPM @ 5.8 Bar"
+  },
+  {
+    "subject": "CHW-P-05",
+    "predicate": "failureDelay",
+    "object": "Inertial Spin-Down (~12s)"
+  },
+  {
+    "subject": "CHW-HDR-01",
+    "predicate": "carriesMedium",
+    "object": "Primary_CHW_6degC"
+  },
+  {
+    "subject": "CHW-HDR-01",
+    "predicate": "nominalRating",
+    "object": "5.5 Bar Header Static Pressure"
+  },
+  {
+    "subject": "CHW-HDR-01",
+    "predicate": "failureDelay",
+    "object": "Hydraulic Depressurization (~8s)"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "carriesMedium",
+    "object": "Secondary_PCW_18degC"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "nominalRating",
+    "object": "850 kW Heat Dissipation Capacity"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "failureDelay",
+    "object": "Thermal Buffer Depletion (~45s)"
+  },
+  {
+    "subject": "CHW-AHU-01",
+    "predicate": "carriesMedium",
+    "object": "Cleanroom_Air"
+  },
+  {
+    "subject": "CHW-AHU-01",
+    "predicate": "nominalRating",
+    "object": "45,000 CFM @ 21.0 degC"
+  },
+  {
+    "subject": "CHW-AHU-01",
+    "predicate": "failureDelay",
+    "object": "Cleanroom Thermal Drift (~180s)"
+  },
+  {
+    "subject": "TOOL-LITHO-01",
+    "predicate": "carriesMedium",
+    "object": "Laser_Cavity_PCW"
+  },
+  {
+    "subject": "TOOL-LITHO-01",
+    "predicate": "nominalRating",
+    "object": "21.5 +/- 0.1 degC Tolerance"
+  },
+  {
+    "subject": "TOOL-LITHO-01",
+    "predicate": "failureDelay",
+    "object": "Laser Thermal Mass Starvation (~95s)"
+  },
+  {
+    "subject": "TOOL-CMP-01",
+    "predicate": "carriesMedium",
+    "object": "Platen_PCW"
+  },
+  {
+    "subject": "TOOL-CMP-01",
+    "predicate": "nominalRating",
+    "object": "25.0 GPM Platen Flow"
+  },
+  {
+    "subject": "TOOL-CMP-01",
+    "predicate": "failureDelay",
+    "object": "Pad/Slurry Overheating (~110s)"
+  },
+  {
+    "subject": "TOOL-CMP-02",
+    "predicate": "carriesMedium",
+    "object": "Carrier_Head_PCW"
+  },
+  {
+    "subject": "TOOL-CMP-02",
+    "predicate": "nominalRating",
+    "object": "18.0 GPM Head Flow"
+  },
+  {
+    "subject": "TOOL-CMP-02",
+    "predicate": "failureDelay",
+    "object": "Carrier Membrane Overheating (~125s)"
+  },
+  {
+    "subject": "UPW-TK-01",
+    "predicate": "rdf:type",
+    "object": "Tank"
+  },
+  {
+    "subject": "UPW-P-01",
+    "predicate": "rdf:type",
+    "object": "Pump"
+  },
+  {
+    "subject": "UPW-P-02",
+    "predicate": "rdf:type",
+    "object": "Pump"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "rdf:type",
+    "object": "Filter"
+  },
+  {
+    "subject": "SAC-0911",
+    "predicate": "rdf:type",
+    "object": "CationExchanger"
+  },
+  {
+    "subject": "SAC-0912",
+    "predicate": "rdf:type",
+    "object": "CationExchanger"
+  },
+  {
+    "subject": "SAC-0913",
+    "predicate": "rdf:type",
+    "object": "CationExchanger"
+  },
+  {
+    "subject": "SAC-0914",
+    "predicate": "rdf:type",
+    "object": "CationExchanger"
+  },
+  {
+    "subject": "S-091",
+    "predicate": "rdf:type",
+    "object": "ChemicalStorage"
+  },
+  {
+    "subject": "S-121",
+    "predicate": "rdf:type",
+    "object": "Pump"
+  },
+  {
+    "subject": "T-1011",
+    "predicate": "rdf:type",
+    "object": "Tank"
+  },
+  {
+    "subject": "T-1012",
+    "predicate": "rdf:type",
+    "object": "Tank"
+  },
+  {
+    "subject": "S-111",
+    "predicate": "rdf:type",
+    "object": "Pump"
+  },
+  {
+    "subject": "S-131",
+    "predicate": "rdf:type",
+    "object": "ChemicalDosing"
+  },
+  {
+    "subject": "S-0511",
+    "predicate": "rdf:type",
+    "object": "ChemicalDosing"
+  },
+  {
+    "subject": "UPW-F-01",
+    "predicate": "rdf:type",
+    "object": "Filter"
+  },
+  {
+    "subject": "UPW-F-02",
+    "predicate": "rdf:type",
+    "object": "Filter"
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "rdf:type",
+    "object": "RO"
+  },
+  {
+    "subject": "UPW-RO-02",
+    "predicate": "rdf:type",
+    "object": "RO"
+  },
+  {
+    "subject": "T-2511",
+    "predicate": "rdf:type",
+    "object": "Tank"
+  },
+  {
+    "subject": "T-200",
+    "predicate": "rdf:type",
+    "object": "Tank"
+  },
+  {
+    "subject": "WASTE",
+    "predicate": "rdf:type",
+    "object": "DrainDestination"
+  },
+  {
+    "subject": "UPW-TK-02",
+    "predicate": "rdf:type",
+    "object": "Tank"
+  },
+  {
+    "subject": "UPW-EDI-01",
+    "predicate": "rdf:type",
+    "object": "EDI"
+  },
+  {
+    "subject": "UPW-EDI-02",
+    "predicate": "rdf:type",
+    "object": "EDI"
+  },
+  {
+    "subject": "MB-3411",
+    "predicate": "rdf:type",
+    "object": "MixedBedPolisher"
+  },
+  {
+    "subject": "UPW-TK-03",
+    "predicate": "rdf:type",
+    "object": "Tank"
+  },
+  {
+    "subject": "UPW-P-03",
+    "predicate": "rdf:type",
+    "object": "Pump"
+  },
+  {
+    "subject": "UPW-P-04",
+    "predicate": "rdf:type",
+    "object": "Pump"
+  },
+  {
+    "subject": "UPW-HDR-01",
+    "predicate": "rdf:type",
+    "object": "Header"
+  },
+  {
+    "subject": "UPW-LOOP-A",
+    "predicate": "rdf:type",
+    "object": "DistributionLoop"
+  },
+  {
+    "subject": "UPW-LOOP-B",
+    "predicate": "rdf:type",
+    "object": "DistributionLoop"
+  },
+  {
+    "subject": "UPW-LOOP-C",
+    "predicate": "rdf:type",
+    "object": "DistributionLoop"
+  },
+  {
+    "subject": "UPW-POU-01",
+    "predicate": "rdf:type",
+    "object": "POU"
+  },
+  {
+    "subject": "UPW-POU-02",
+    "predicate": "rdf:type",
+    "object": "POU"
+  },
+  {
+    "subject": "UPW-POU-03",
+    "predicate": "rdf:type",
+    "object": "POU"
+  },
+  {
+    "subject": "UPW-POU-04",
+    "predicate": "rdf:type",
+    "object": "POU"
+  },
+  {
+    "subject": "UPW-POU-05",
+    "predicate": "rdf:type",
+    "object": "POU"
+  },
+  {
+    "subject": "UPW-POU-06",
+    "predicate": "rdf:type",
+    "object": "POU"
+  },
+  {
+    "subject": "CHW-CT-01",
+    "predicate": "rdf:type",
+    "object": "CoolingTower"
+  },
+  {
+    "subject": "CHW-CT-02",
+    "predicate": "rdf:type",
+    "object": "CoolingTower"
+  },
+  {
+    "subject": "CHW-CT-03",
+    "predicate": "rdf:type",
+    "object": "CoolingTower"
+  },
+  {
+    "subject": "CHW-CT-04",
+    "predicate": "rdf:type",
+    "object": "CoolingTower"
+  },
+  {
+    "subject": "CHW-P-01",
+    "predicate": "rdf:type",
+    "object": "CondenserWaterPump"
+  },
+  {
+    "subject": "CHW-P-02",
+    "predicate": "rdf:type",
+    "object": "CondenserWaterPump"
+  },
+  {
+    "subject": "CHW-P-03",
+    "predicate": "rdf:type",
+    "object": "CondenserWaterPump"
+  },
+  {
+    "subject": "CHW-P-04",
+    "predicate": "rdf:type",
+    "object": "CondenserWaterPump"
+  },
+  {
+    "subject": "CHW-CH-01",
+    "predicate": "rdf:type",
+    "object": "Chiller"
+  },
+  {
+    "subject": "CHW-CH-02",
+    "predicate": "rdf:type",
+    "object": "Chiller"
+  },
+  {
+    "subject": "CHW-CH-03",
+    "predicate": "rdf:type",
+    "object": "Chiller"
+  },
+  {
+    "subject": "CHW-CH-04",
+    "predicate": "rdf:type",
+    "object": "Chiller"
+  },
+  {
+    "subject": "CHW-P-05",
+    "predicate": "rdf:type",
+    "object": "CHWPump"
+  },
+  {
+    "subject": "CHW-P-06",
+    "predicate": "rdf:type",
+    "object": "CHWPump"
+  },
+  {
+    "subject": "CHW-P-07",
+    "predicate": "rdf:type",
+    "object": "CHWPump"
+  },
+  {
+    "subject": "CHW-P-08",
+    "predicate": "rdf:type",
+    "object": "CHWPump"
+  },
+  {
+    "subject": "CHW-HDR-01",
+    "predicate": "rdf:type",
+    "object": "Header"
+  },
+  {
+    "subject": "CHW-ZONE-A",
+    "predicate": "rdf:type",
+    "object": "DistributionZone"
+  },
+  {
+    "subject": "CHW-ZONE-B",
+    "predicate": "rdf:type",
+    "object": "DistributionZone"
+  },
+  {
+    "subject": "CHW-ZONE-C",
+    "predicate": "rdf:type",
+    "object": "DistributionZone"
+  },
+  {
+    "subject": "CHW-AHU-01",
+    "predicate": "rdf:type",
+    "object": "CoolingLoad"
+  },
+  {
+    "subject": "CHW-AHU-02",
+    "predicate": "rdf:type",
+    "object": "CoolingLoad"
+  },
+  {
+    "subject": "CHW-AHU-03",
+    "predicate": "rdf:type",
+    "object": "CoolingLoad"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "rdf:type",
+    "object": "HeatExchanger"
+  },
+  {
+    "subject": "CHW-HX-02",
+    "predicate": "rdf:type",
+    "object": "HeatExchanger"
+  },
+  {
+    "subject": "CHW-HX-03",
+    "predicate": "rdf:type",
+    "object": "HeatExchanger"
+  },
+  {
+    "subject": "TOOL-CMP-01",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-CMP-02",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-WC-01",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-WC-02",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-ETCH-01",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-ETCH-02",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-DEP-01",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-LITHO-01",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TOOL-MET-01",
+    "predicate": "rdf:type",
+    "object": "ProcessTool"
+  },
+  {
+    "subject": "TX-01",
+    "predicate": "rdf:type",
+    "object": "Transformer"
+  },
+  {
+    "subject": "TX-02",
+    "predicate": "rdf:type",
+    "object": "Transformer"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "rdf:type",
+    "object": "MCC"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "rdf:type",
+    "object": "MCC"
+  },
+  {
+    "subject": "PLC-UPW-01",
+    "predicate": "rdf:type",
+    "object": "PLC"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "rdf:type",
+    "object": "PLC"
+  },
+  {
+    "subject": "UPW-TK-01",
+    "predicate": "SUPPLIES",
+    "object": "UPW-P-01"
+  },
+  {
+    "subject": "UPW-TK-01",
+    "predicate": "SUPPLIES",
+    "object": "UPW-P-02"
+  },
+  {
+    "subject": "UPW-P-01",
+    "predicate": "FEEDS",
+    "object": "MMF"
+  },
+  {
+    "subject": "UPW-P-02",
+    "predicate": "FEEDS",
+    "object": "MMF"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "FEEDS",
+    "object": "SAC-0911"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "FEEDS",
+    "object": "SAC-0912"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "FEEDS",
+    "object": "SAC-0913"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "FEEDS",
+    "object": "SAC-0914"
+  },
+  {
+    "subject": "S-091",
+    "predicate": "SUPPLIES",
+    "object": "S-121"
+  },
+  {
+    "subject": "S-121",
+    "predicate": "REGENERATES",
+    "object": "SAC-0911"
+  },
+  {
+    "subject": "S-121",
+    "predicate": "REGENERATES",
+    "object": "SAC-0912"
+  },
+  {
+    "subject": "S-121",
+    "predicate": "REGENERATES",
+    "object": "SAC-0913"
+  },
+  {
+    "subject": "S-121",
+    "predicate": "REGENERATES",
+    "object": "SAC-0914"
+  },
+  {
+    "subject": "SAC-0911",
+    "predicate": "FEEDS",
+    "object": "T-1011"
+  },
+  {
+    "subject": "SAC-0912",
+    "predicate": "FEEDS",
+    "object": "T-1011"
+  },
+  {
+    "subject": "SAC-0913",
+    "predicate": "FEEDS",
+    "object": "T-1012"
+  },
+  {
+    "subject": "SAC-0914",
+    "predicate": "FEEDS",
+    "object": "T-1012"
+  },
+  {
+    "subject": "T-1011",
+    "predicate": "SUPPLIES",
+    "object": "S-111"
+  },
+  {
+    "subject": "T-1012",
+    "predicate": "SUPPLIES",
+    "object": "S-111"
+  },
+  {
+    "subject": "S-131",
+    "predicate": "INJECTS_INTO",
+    "object": "S-111"
+  },
+  {
+    "subject": "S-0511",
+    "predicate": "INJECTS_INTO",
+    "object": "S-111"
+  },
+  {
+    "subject": "S-111",
+    "predicate": "FEEDS",
+    "object": "UPW-F-01"
+  },
+  {
+    "subject": "S-111",
+    "predicate": "FEEDS",
+    "object": "UPW-F-02"
+  },
+  {
+    "subject": "UPW-F-01",
+    "predicate": "SUPPLIES",
+    "object": "UPW-RO-01"
+  },
+  {
+    "subject": "UPW-F-02",
+    "predicate": "SUPPLIES",
+    "object": "UPW-RO-02"
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "PERMEATE_TO",
+    "object": "T-2511"
+  },
+  {
+    "subject": "UPW-RO-02",
+    "predicate": "PERMEATE_TO",
+    "object": "T-2511"
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "REJECT_TO",
+    "object": "T-200"
+  },
+  {
+    "subject": "UPW-RO-02",
+    "predicate": "REJECT_TO",
+    "object": "T-200"
+  },
+  {
+    "subject": "T-200",
+    "predicate": "DRAINS_TO",
+    "object": "WASTE"
+  },
+  {
+    "subject": "T-2511",
+    "predicate": "SUPPLIES",
+    "object": "UPW-TK-02"
+  },
+  {
+    "subject": "UPW-TK-02",
+    "predicate": "SUPPLIES",
+    "object": "UPW-EDI-01"
+  },
+  {
+    "subject": "UPW-TK-02",
+    "predicate": "SUPPLIES",
+    "object": "UPW-EDI-02"
+  },
+  {
+    "subject": "UPW-EDI-01",
+    "predicate": "FEEDS",
+    "object": "MB-3411"
+  },
+  {
+    "subject": "UPW-EDI-02",
+    "predicate": "FEEDS",
+    "object": "MB-3411"
+  },
+  {
+    "subject": "MB-3411",
+    "predicate": "SUPPLIES",
+    "object": "UPW-TK-03"
+  },
+  {
+    "subject": "UPW-TK-03",
+    "predicate": "SUPPLIES",
+    "object": "UPW-P-03"
+  },
+  {
+    "subject": "UPW-TK-03",
+    "predicate": "SUPPLIES",
+    "object": "UPW-P-04"
+  },
+  {
+    "subject": "UPW-P-03",
+    "predicate": "SUPPLIES",
+    "object": "UPW-HDR-01"
+  },
+  {
+    "subject": "UPW-P-04",
+    "predicate": "SUPPLIES",
+    "object": "UPW-HDR-01"
+  },
+  {
+    "subject": "UPW-HDR-01",
+    "predicate": "DISTRIBUTES_TO",
+    "object": "UPW-LOOP-A"
+  },
+  {
+    "subject": "UPW-HDR-01",
+    "predicate": "DISTRIBUTES_TO",
+    "object": "UPW-LOOP-B"
+  },
+  {
+    "subject": "UPW-HDR-01",
+    "predicate": "DISTRIBUTES_TO",
+    "object": "UPW-LOOP-C"
+  },
+  {
+    "subject": "UPW-LOOP-A",
+    "predicate": "FEEDS",
+    "object": "UPW-POU-01"
+  },
+  {
+    "subject": "UPW-LOOP-A",
+    "predicate": "FEEDS",
+    "object": "UPW-POU-02"
+  },
+  {
+    "subject": "UPW-LOOP-B",
+    "predicate": "FEEDS",
+    "object": "UPW-POU-03"
+  },
+  {
+    "subject": "UPW-LOOP-B",
+    "predicate": "FEEDS",
+    "object": "UPW-POU-04"
+  },
+  {
+    "subject": "UPW-LOOP-C",
+    "predicate": "FEEDS",
+    "object": "UPW-POU-05"
+  },
+  {
+    "subject": "UPW-LOOP-C",
+    "predicate": "FEEDS",
+    "object": "UPW-POU-06"
+  },
+  {
+    "subject": "UPW-LOOP-A",
+    "predicate": "RETURNS_TO",
+    "object": "UPW-TK-03"
+  },
+  {
+    "subject": "UPW-LOOP-B",
+    "predicate": "RETURNS_TO",
+    "object": "UPW-TK-03"
+  },
+  {
+    "subject": "UPW-LOOP-C",
+    "predicate": "RETURNS_TO",
+    "object": "UPW-TK-03"
+  },
+  {
+    "subject": "UPW-LOOP-A",
+    "predicate": "FEEDS",
+    "object": "UPW-LOOP-B"
+  },
+  {
+    "subject": "UPW-LOOP-B",
+    "predicate": "FEEDS",
+    "object": "UPW-LOOP-C"
+  },
+  {
+    "subject": "UPW-LOOP-C",
+    "predicate": "FEEDS",
+    "object": "UPW-LOOP-A"
+  },
+  {
+    "subject": "CHW-CT-01",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-01"
+  },
+  {
+    "subject": "CHW-CT-02",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-02"
+  },
+  {
+    "subject": "CHW-CT-03",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-03"
+  },
+  {
+    "subject": "CHW-CT-04",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-04"
+  },
+  {
+    "subject": "CHW-P-01",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-01"
+  },
+  {
+    "subject": "CHW-P-02",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-02"
+  },
+  {
+    "subject": "CHW-P-03",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-03"
+  },
+  {
+    "subject": "CHW-P-04",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-04"
+  },
+  {
+    "subject": "CHW-P-01",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-02"
+  },
+  {
+    "subject": "CHW-P-02",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-03"
+  },
+  {
+    "subject": "CHW-P-03",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-04"
+  },
+  {
+    "subject": "CHW-P-04",
+    "predicate": "FEEDS",
+    "object": "CHW-CH-01"
+  },
+  {
+    "subject": "CHW-CH-01",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-05"
+  },
+  {
+    "subject": "CHW-CH-02",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-06"
+  },
+  {
+    "subject": "CHW-CH-03",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-07"
+  },
+  {
+    "subject": "CHW-CH-04",
+    "predicate": "SUPPLIES",
+    "object": "CHW-P-08"
+  },
+  {
+    "subject": "CHW-CH-01",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-CH-02",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-CH-03",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-CH-04",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-P-05",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-P-06",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-P-07",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-P-08",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HDR-01"
+  },
+  {
+    "subject": "CHW-HDR-01",
+    "predicate": "DISTRIBUTES_TO",
+    "object": "CHW-ZONE-A"
+  },
+  {
+    "subject": "CHW-HDR-01",
+    "predicate": "DISTRIBUTES_TO",
+    "object": "CHW-ZONE-B"
+  },
+  {
+    "subject": "CHW-HDR-01",
+    "predicate": "DISTRIBUTES_TO",
+    "object": "CHW-ZONE-C"
+  },
+  {
+    "subject": "CHW-ZONE-A",
+    "predicate": "COOLS",
+    "object": "CHW-AHU-01"
+  },
+  {
+    "subject": "CHW-ZONE-B",
+    "predicate": "COOLS",
+    "object": "CHW-AHU-02"
+  },
+  {
+    "subject": "CHW-ZONE-C",
+    "predicate": "COOLS",
+    "object": "CHW-AHU-03"
+  },
+  {
+    "subject": "CHW-ZONE-A",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HX-01"
+  },
+  {
+    "subject": "CHW-ZONE-B",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HX-02"
+  },
+  {
+    "subject": "CHW-ZONE-C",
+    "predicate": "SUPPLIES",
+    "object": "CHW-HX-03"
+  },
+  {
+    "subject": "CHW-AHU-01",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-01"
+  },
+  {
+    "subject": "CHW-AHU-02",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-02"
+  },
+  {
+    "subject": "CHW-AHU-03",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-03"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-01"
+  },
+  {
+    "subject": "CHW-HX-02",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-02"
+  },
+  {
+    "subject": "CHW-HX-03",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-03"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-02"
+  },
+  {
+    "subject": "CHW-HX-02",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-03"
+  },
+  {
+    "subject": "CHW-HX-03",
+    "predicate": "RETURNS_TO",
+    "object": "CHW-CH-04"
+  },
+  {
+    "subject": "UPW-POU-01",
+    "predicate": "SUPPLIES",
+    "object": "TOOL-CMP-01"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "COOLS",
+    "object": "TOOL-CMP-01"
+  },
+  {
+    "subject": "UPW-POU-02",
+    "predicate": "SUPPLIES",
+    "object": "TOOL-CMP-02"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "COOLS",
+    "object": "TOOL-CMP-02"
+  },
+  {
+    "subject": "UPW-POU-03",
+    "predicate": "SUPPLIES",
+    "object": "TOOL-WC-01"
+  },
+  {
+    "subject": "CHW-HX-02",
+    "predicate": "COOLS",
+    "object": "TOOL-WC-01"
+  },
+  {
+    "subject": "UPW-POU-04",
+    "predicate": "SUPPLIES",
+    "object": "TOOL-WC-02"
+  },
+  {
+    "subject": "CHW-HX-02",
+    "predicate": "COOLS",
+    "object": "TOOL-WC-02"
+  },
+  {
+    "subject": "CHW-HX-03",
+    "predicate": "COOLS",
+    "object": "TOOL-ETCH-01"
+  },
+  {
+    "subject": "CHW-HX-03",
+    "predicate": "COOLS",
+    "object": "TOOL-ETCH-02"
+  },
+  {
+    "subject": "CHW-HX-02",
+    "predicate": "COOLS",
+    "object": "TOOL-DEP-01"
+  },
+  {
+    "subject": "UPW-POU-05",
+    "predicate": "SUPPLIES",
+    "object": "TOOL-LITHO-01"
+  },
+  {
+    "subject": "CHW-HX-01",
+    "predicate": "COOLS",
+    "object": "TOOL-LITHO-01"
+  },
+  {
+    "subject": "UPW-POU-06",
+    "predicate": "SUPPLIES",
+    "object": "TOOL-MET-01"
+  },
+  {
+    "subject": "CHW-HX-03",
+    "predicate": "COOLS",
+    "object": "TOOL-MET-01"
+  },
+  {
+    "subject": "TX-01",
+    "predicate": "POWERS",
+    "object": "MCC-01"
+  },
+  {
+    "subject": "TX-02",
+    "predicate": "POWERS",
+    "object": "MCC-02"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "POWERS",
+    "object": "UPW-P-01"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "POWERS",
+    "object": "UPW-P-04"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "POWERS",
+    "object": "CHW-P-05"
+  },
+  {
+    "subject": "MCC-01",
+    "predicate": "POWERS",
+    "object": "CHW-P-07"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "POWERS",
+    "object": "UPW-P-02"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "POWERS",
+    "object": "UPW-P-03"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "POWERS",
+    "object": "CHW-P-06"
+  },
+  {
+    "subject": "MCC-02",
+    "predicate": "POWERS",
+    "object": "CHW-P-08"
+  },
+  {
+    "subject": "PLC-UPW-01",
+    "predicate": "CONTROLS",
+    "object": "UPW-P-01"
+  },
+  {
+    "subject": "PLC-UPW-01",
+    "predicate": "CONTROLS",
+    "object": "UPW-P-02"
+  },
+  {
+    "subject": "PLC-UPW-01",
+    "predicate": "CONTROLS",
+    "object": "UPW-P-03"
+  },
+  {
+    "subject": "PLC-UPW-01",
+    "predicate": "CONTROLS",
+    "object": "UPW-P-04"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-01"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-02"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-03"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-04"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-05"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-06"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-07"
+  },
+  {
+    "subject": "PLC-CHW-01",
+    "predicate": "CONTROLS",
+    "object": "CHW-P-08"
+  },
+  {
+    "subject": "UPW-P-02",
+    "predicate": "BACKUP_FOR",
+    "object": "UPW-P-01"
+  },
+  {
+    "subject": "UPW-P-01",
+    "predicate": "BACKUP_FOR",
+    "object": "UPW-P-02"
+  },
+  {
+    "subject": "UPW-P-04",
+    "predicate": "BACKUP_FOR",
+    "object": "UPW-P-03"
+  },
+  {
+    "subject": "UPW-P-03",
+    "predicate": "BACKUP_FOR",
+    "object": "UPW-P-04"
+  },
+  {
+    "subject": "CHW-CH-04",
+    "predicate": "BACKUP_FOR",
+    "object": "CHW-CH-01"
+  },
+  {
+    "subject": "CHW-CH-04",
+    "predicate": "BACKUP_FOR",
+    "object": "CHW-CH-02"
+  },
+  {
+    "subject": "CHW-CH-04",
+    "predicate": "BACKUP_FOR",
+    "object": "CHW-CH-03"
+  },
+  {
+    "subject": "CHW-P-08",
+    "predicate": "BACKUP_FOR",
+    "object": "CHW-P-05"
+  },
+  {
+    "subject": "CHW-P-08",
+    "predicate": "BACKUP_FOR",
+    "object": "CHW-P-06"
+  },
+  {
+    "subject": "CHW-P-08",
+    "predicate": "BACKUP_FOR",
+    "object": "CHW-P-07"
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "hasHistoricalCase",
+    "object": "Case_RO01_2026_ProbeDrift_ORingLeak"
+  },
+  {
+    "subject": "Case_RO01_2026_ProbeDrift_ORingLeak",
+    "predicate": "rdf:type",
+    "object": "HistoricalCase"
+  },
+  {
+    "subject": "Case_RO01_2026_ProbeDrift_ORingLeak",
+    "predicate": "hasSymptom",
+    "object": "Localized UPW-RO-01 permeate conductivity drift (>0.033 uS/cm) with nominal delta-P (1.4 bar) and healthy sister unit UPW-RO-02 (<0.03 uS/cm)"
+  },
+  {
+    "subject": "Case_RO01_2026_ProbeDrift_ORingLeak",
+    "predicate": "hasRootCause",
+    "object": "Local permeate sensor probe calibration drift or unseated permeate tube interconnector O-ring leak on UPW-RO-01"
+  },
+  {
+    "subject": "Case_RO01_2026_ProbeDrift_ORingLeak",
+    "predicate": "hasMitigation",
+    "object": "1. Perform inline two-point recalibration of conductivity sensor probe UPW-RO-01-COND. 2. Inspect RO-01 permeate tube interconnector O-rings during next scheduled sanitization window."
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "susceptibleTo",
+    "object": "SensorDrift_ORingLeak"
+  },
+  {
+    "subject": "SensorDrift_ORingLeak",
+    "predicate": "inducesDrift",
+    "object": "Permeate_Conductivity_Excursion"
+  },
+  {
+    "subject": "SensorDrift_ORingLeak",
+    "predicate": "governedByLaw",
+    "object": "Nernst_Planck_Ion_Transport & ASTM_D1125_Sensor_Electrochemistry"
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "carriesMedium",
+    "object": "Ultrapure_RO_Permeate"
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "nominalRating",
+    "object": "Recovery 78%, Permeate Cond <0.06 uS/cm, dP 1.4 Bar"
+  },
+  {
+    "subject": "UPW-RO-01",
+    "predicate": "failureDelay",
+    "object": "Slow Sensor Drift (~10-30 mins)"
+  },
+  {
+    "subject": "T-1012",
+    "predicate": "hasHistoricalCase",
+    "object": "Case_T1012_2026_CationBreakthrough_FeedContamination"
+  },
+  {
+    "subject": "Case_T1012_2026_CationBreakthrough_FeedContamination",
+    "predicate": "rdf:type",
+    "object": "HistoricalCase"
+  },
+  {
+    "subject": "Case_T1012_2026_CationBreakthrough_FeedContamination",
+    "predicate": "hasSymptom",
+    "object": "Symmetric multi-train RO permeate conductivity spike (>0.08 uS/cm) and dP rise (>2.3 bar) on BOTH UPW-RO-01 and UPW-RO-02 accompanied by T-1012 conductivity >7.8 uS/cm and pH 4.8"
+  },
+  {
+    "subject": "Case_T1012_2026_CationBreakthrough_FeedContamination",
+    "predicate": "hasDistinguishingFeature",
+    "object": "Symmetric Dual-Train RO Degradation rules out single-element O-ring failure (Case 1); confirms upstream feed contamination"
+  },
+  {
+    "subject": "Case_T1012_2026_CationBreakthrough_FeedContamination",
+    "predicate": "hasRootCause",
+    "object": "Strong Acid Cation (SAC) resin exhaustion in SAC-0913/0914 causing un-neutralized mineral slip into buffer tank T-1012"
+  },
+  {
+    "subject": "Case_T1012_2026_CationBreakthrough_FeedContamination",
+    "predicate": "hasMitigation",
+    "object": "1. Isolate T-1012 and switch S-111 pump suction to N+1 standby tank T-1011. 2. Take SAC-0913/0914 offline and initiate acid regeneration via skid S-121."
+  },
+  {
+    "subject": "T-1012",
+    "predicate": "susceptibleTo",
+    "object": "CationResinExhaustion_MineralSlip"
+  },
+  {
+    "subject": "CationResinExhaustion_MineralSlip",
+    "predicate": "inducesDrift",
+    "object": "CommonMode_RO_FeedContamination"
+  },
+  {
+    "subject": "CommonMode_RO_FeedContamination",
+    "predicate": "affectsAsset",
+    "object": "UPW-RO-01"
+  },
+  {
+    "subject": "CommonMode_RO_FeedContamination",
+    "predicate": "affectsAsset",
+    "object": "UPW-RO-02"
+  },
+  {
+    "subject": "SAC-0913",
+    "predicate": "susceptibleTo",
+    "object": "CationResinExhaustion_MineralSlip"
+  },
+  {
+    "subject": "SAC-0913",
+    "predicate": "regeneratedBy",
+    "object": "S-121"
+  },
+  {
+    "subject": "SAC-0914",
+    "predicate": "susceptibleTo",
+    "object": "CationResinExhaustion_MineralSlip"
+  },
+  {
+    "subject": "SAC-0914",
+    "predicate": "regeneratedBy",
+    "object": "S-121"
+  },
+  {
+    "subject": "T-1012",
+    "predicate": "carriesMedium",
+    "object": "Decationized_PreTreated_Water"
+  },
+  {
+    "subject": "T-1012",
+    "predicate": "nominalRating",
+    "object": "Conductivity <2.0 uS/cm, pH 6.5-7.2, 30k Gal Buffer"
+  },
+  {
+    "subject": "T-1012",
+    "predicate": "hasBackupAsset",
+    "object": "T-1011"
+  },
+  {
+    "subject": "T-1011",
+    "predicate": "carriesMedium",
+    "object": "Decationized_PreTreated_Water"
+  },
+  {
+    "subject": "T-1011",
+    "predicate": "nominalRating",
+    "object": "Conductivity <2.0 uS/cm, pH 6.5-7.2, 30k Gal Buffer (Standby)"
+  },
+  {
+    "subject": "T-1011",
+    "predicate": "isAvailableAsFailover",
+    "object": "true"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "hasHistoricalCase",
+    "object": "Case_MMF_2026_UnderdrainRupture_SiltBreakthrough"
+  },
+  {
+    "subject": "Case_MMF_2026_UnderdrainRupture_SiltBreakthrough",
+    "predicate": "rdf:type",
+    "object": "HistoricalCase"
+  },
+  {
+    "subject": "Case_MMF_2026_UnderdrainRupture_SiltBreakthrough",
+    "predicate": "hasSymptom",
+    "object": "Plant-wide pretreatment collapse: Silt and particulate breakthrough contaminating BOTH storage tanks T-1011 & T-1012 (Cond >6.0 uS/cm, pH ~5.0) causing severe colloidal spacer fouling (dP >2.6 bar) and salt passage on BOTH UPW-RO-01 & RO-02"
+  },
+  {
+    "subject": "Case_MMF_2026_UnderdrainRupture_SiltBreakthrough",
+    "predicate": "hasDistinguishingFeature",
+    "object": "Both buffer tanks T-1011 AND T-1012 are contaminated; rules out Case 2 (where standby T-1011 is clean); rules out Case 1 (where sister RO-02 is nominal); confirms intake filtration collapse upstream of both tanks"
+  },
+  {
+    "subject": "Case_MMF_2026_UnderdrainRupture_SiltBreakthrough",
+    "predicate": "hasRootCause",
+    "object": "Underdrain lateral nozzle mesh collapse on Multi-Media Filter Bank MMF causing anthrafilt and garnet sand slip into downstream distribution"
+  },
+  {
+    "subject": "Case_MMF_2026_UnderdrainRupture_SiltBreakthrough",
+    "predicate": "hasMitigation",
+    "object": "1. Emergency trip of raw water intake pump UPW-P-01 to halt silt intake. 2. Isolate MMF bank and bypass to secondary reserve. 3. Do NOT switch to T-1011 (standby tank also fouled). 4. Initiate high-rate backwash and underdrain rebuild on MMF skid."
+  },
+  {
+    "subject": "MMF",
+    "predicate": "susceptibleTo",
+    "object": "UnderdrainNozzleFailure_MediaSlip"
+  },
+  {
+    "subject": "UnderdrainNozzleFailure_MediaSlip",
+    "predicate": "inducesDrift",
+    "object": "PlantWide_Silt_Colloidal_Fouling"
+  },
+  {
+    "subject": "PlantWide_Silt_Colloidal_Fouling",
+    "predicate": "affectsAsset",
+    "object": "T-1011"
+  },
+  {
+    "subject": "PlantWide_Silt_Colloidal_Fouling",
+    "predicate": "affectsAsset",
+    "object": "T-1012"
+  },
+  {
+    "subject": "PlantWide_Silt_Colloidal_Fouling",
+    "predicate": "affectsAsset",
+    "object": "UPW-RO-01"
+  },
+  {
+    "subject": "PlantWide_Silt_Colloidal_Fouling",
+    "predicate": "affectsAsset",
+    "object": "UPW-RO-02"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "carriesMedium",
+    "object": "Intake_Clarified_Raw_Water"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "nominalRating",
+    "object": "Turbidity <0.2 NTU, SDI <3.0, 500 GPM Dual-Bed"
+  },
+  {
+    "subject": "MMF",
+    "predicate": "failureDelay",
+    "object": "Rapid Silt Dispersion (~5-15 mins)"
+  }
+]

@@ -1,0 +1,763 @@
+# Semiconductor Fab Utilities — Adjacency List v1
+
+## Purpose
+
+Representative semiconductor-fab Facilities utility dependency graph
+for AI-agent / Neo4j knowledge-graph demonstrations.
+
+Scope:
+- UPW (Ultrapure Water)
+- CHW (Chilled Water)
+- Small electrical/control dependency layer
+- Representative semiconductor process loads
+
+IMPORTANT:
+This is a representative engineering/demo topology.
+It is NOT claimed to be the actual STMicroelectronics Singapore topology.
+All quantities, redundancy arrangements and process-tool utility assignments
+must be validated with the customer's Facilities engineers before being
+presented as site-specific information.
+
+---
+
+# 1. Graph conventions
+
+Each line follows:
+
+SOURCE_ID -> RELATIONSHIP -> TARGET_ID
+
+Primary relationship semantics:
+
+SUPPLIES
+FEEDS
+DISTRIBUTES_TO
+RETURNS_TO
+COOLS
+POWERS
+CONTROLS
+BACKUP_FOR
+
+Direction generally follows physical/functional dependency.
+
+Example:
+
+UPW-P-01 -> SUPPLIES -> UPW-HDR-01 [max_capacity: 500, current_load: 420, unit: GPM]
+
+means:
+
+UPW-P-01 supplies UPW-HDR-01.
+
+---
+
+# 2. NODE DEFINITIONS
+
+## 2.1 UPW generation
+
+UPW-TK-01 | Tank | Raw Water / Feed Tank
+
+UPW-P-01 | Pump | Raw Water Feed Pump 01
+UPW-P-02 | Pump | Raw Water Feed Pump 02
+
+MMF | Filter | Multi-Media Filter Bank
+
+SAC-0911 | CationExchanger | Strong Acid Cation Exchanger 0911
+SAC-0912 | CationExchanger | Strong Acid Cation Exchanger 0912
+SAC-0913 | CationExchanger | Strong Acid Cation Exchanger 0913
+SAC-0914 | CationExchanger | Strong Acid Cation Exchanger 0914
+
+S-091 | ChemicalStorage | Cation Regeneration Acid Storage System
+S-121 | Pump | Cation Regeneration Pump
+
+T-1011 | Tank | Pre-Treated Water Storage Tank 1011
+T-1012 | Tank | Pre-Treated Water Storage Tank 1012
+
+S-111 | Pump | Pre-Treated Water Transfer Pump
+S-131 | ChemicalDosing | Bisulfite Injection System
+S-0511 | ChemicalDosing | Caustic Injection System
+
+UPW-F-01 | Filter | Pretreatment Filter 01
+UPW-F-02 | Filter | Pretreatment Filter 02
+
+UPW-RO-01 | RO | Reverse Osmosis Train 01
+UPW-RO-02 | RO | Reverse Osmosis Train 02
+
+T-2511 | Tank | RO Product Storage Tank
+T-200 | Tank | RO Reject Storage Tank
+WASTE | DrainDestination | Waste Drain Destination
+
+UPW-TK-02 | Tank | RO Permeate Tank
+
+UPW-EDI-01 | EDI | Electrodeionization Train 01
+UPW-EDI-02 | EDI | Electrodeionization Train 02
+
+MB-3411 | MixedBedPolisher | Primary Mixed Bed Polisher 3411
+
+UPW-TK-03 | Tank | UPW Storage Tank
+
+UPW-P-03 | Pump | UPW Circulation Pump 03
+UPW-P-04 | Pump | UPW Circulation Pump 04
+
+UPW-HDR-01 | Header | Main UPW Distribution Header
+
+
+## 2.2 UPW distribution
+
+UPW-LOOP-A | DistributionLoop | UPW Distribution Loop A
+UPW-LOOP-B | DistributionLoop | UPW Distribution Loop B
+UPW-LOOP-C | DistributionLoop | UPW Distribution Loop C
+
+UPW-POU-01 | POU | Point of Use A01
+UPW-POU-02 | POU | Point of Use A02
+UPW-POU-03 | POU | Point of Use B01
+UPW-POU-04 | POU | Point of Use B02
+UPW-POU-05 | POU | Point of Use C01
+UPW-POU-06 | POU | Point of Use C02
+
+
+## 2.3 CHW generation
+
+CHW-CT-01 | CoolingTower | Cooling Tower 01
+CHW-CT-02 | CoolingTower | Cooling Tower 02
+CHW-CT-03 | CoolingTower | Cooling Tower 03
+CHW-CT-04 | CoolingTower | Cooling Tower 04
+
+CHW-P-01 | CondenserWaterPump | Condenser Water Pump 01
+CHW-P-02 | CondenserWaterPump | Condenser Water Pump 02
+CHW-P-03 | CondenserWaterPump | Condenser Water Pump 03
+CHW-P-04 | CondenserWaterPump | Condenser Water Pump 04
+
+CHW-CH-01 | Chiller | Chiller 01
+CHW-CH-02 | Chiller | Chiller 02
+CHW-CH-03 | Chiller | Chiller 03
+CHW-CH-04 | Chiller | Chiller 04
+
+CHW-P-05 | CHWPump | Chilled Water Pump 05
+CHW-P-06 | CHWPump | Chilled Water Pump 06
+CHW-P-07 | CHWPump | Chilled Water Pump 07
+CHW-P-08 | CHWPump | Chilled Water Pump 08
+
+CHW-HDR-01 | Header | Main CHW Distribution Header
+
+
+## 2.4 CHW distribution
+
+CHW-ZONE-A | DistributionZone | CHW Distribution Zone A
+CHW-ZONE-B | DistributionZone | CHW Distribution Zone B
+CHW-ZONE-C | DistributionZone | CHW Distribution Zone C
+
+CHW-AHU-01 | CoolingLoad | Cleanroom/AHU Cooling Load A
+CHW-AHU-02 | CoolingLoad | Cleanroom/AHU Cooling Load B
+CHW-AHU-03 | CoolingLoad | Cleanroom/AHU Cooling Load C
+
+CHW-HX-01 | HeatExchanger | Process Cooling HX 01
+CHW-HX-02 | HeatExchanger | Process Cooling HX 02
+CHW-HX-03 | HeatExchanger | Process Cooling HX 03
+
+
+## 2.5 Process loads
+
+TOOL-CMP-01 | ProcessTool | CMP Tool 01
+TOOL-CMP-02 | ProcessTool | CMP Tool 02
+
+TOOL-WC-01 | ProcessTool | Wet Clean Tool 01
+TOOL-WC-02 | ProcessTool | Wet Clean Tool 02
+
+TOOL-ETCH-01 | ProcessTool | Etch Tool 01
+TOOL-ETCH-02 | ProcessTool | Etch Tool 02
+
+TOOL-DEP-01 | ProcessTool | Deposition Tool 01
+
+TOOL-LITHO-01 | ProcessTool | Lithography Tool 01
+
+TOOL-MET-01 | ProcessTool | Metrology / Inspection Tool 01
+
+
+## 2.6 Electrical / control
+
+TX-01 | Transformer | Utility Transformer 01
+TX-02 | Transformer | Utility Transformer 02
+
+MCC-01 | MCC | Motor Control Center 01
+MCC-02 | MCC | Motor Control Center 02
+
+PLC-UPW-01 | PLC | UPW Control PLC
+PLC-CHW-01 | PLC | CHW Control PLC
+
+
+# 3. UPW ADJACENCY LIST
+
+## 3.1 Raw water → MMF → SAC Cation Exchanger Train
+
+UPW-TK-01 -> SUPPLIES -> UPW-P-01 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-TK-01 -> SUPPLIES -> UPW-P-02 [max_capacity: 500, current_load: 420, unit: GPM]
+
+UPW-P-01 -> FEEDS -> MMF [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-P-02 -> FEEDS -> MMF [max_capacity: 500, current_load: 420, unit: GPM]
+
+MMF -> FEEDS -> SAC-0911 [max_capacity: 150, current_load: 125, unit: GPM]
+MMF -> FEEDS -> SAC-0912 [max_capacity: 150, current_load: 125, unit: GPM]
+MMF -> FEEDS -> SAC-0913 [max_capacity: 150, current_load: 125, unit: GPM]
+MMF -> FEEDS -> SAC-0914 [max_capacity: 150, current_load: 125, unit: GPM]
+
+## 3.2 Acid Regeneration Train
+
+S-091 -> SUPPLIES -> S-121 [max_capacity: 50, current_load: 25, unit: GPM]
+S-121 -> REGENERATES -> SAC-0911 [medium: Acid Regen]
+S-121 -> REGENERATES -> SAC-0912 [medium: Acid Regen]
+S-121 -> REGENERATES -> SAC-0913 [medium: Acid Regen]
+S-121 -> REGENERATES -> SAC-0914 [medium: Acid Regen]
+
+## 3.3 SAC Cation Exchangers → Pre-Treated Tanks → Transfer Pump & Dosing
+
+SAC-0911 -> FEEDS -> T-1011 [max_capacity: 250, current_load: 210, unit: GPM]
+SAC-0912 -> FEEDS -> T-1011 [max_capacity: 250, current_load: 210, unit: GPM]
+SAC-0913 -> FEEDS -> T-1012 [max_capacity: 250, current_load: 210, unit: GPM]
+SAC-0914 -> FEEDS -> T-1012 [max_capacity: 250, current_load: 210, unit: GPM]
+
+T-1011 -> SUPPLIES -> S-111 [max_capacity: 500, current_load: 420, unit: GPM]
+T-1012 -> SUPPLIES -> S-111 [max_capacity: 500, current_load: 420, unit: GPM]
+
+S-131 -> INJECTS_INTO -> S-111 [medium: NaHSO3 Bisulfite]
+S-0511 -> INJECTS_INTO -> S-111 [medium: NaOH Caustic]
+
+S-111 -> FEEDS -> UPW-F-01 [max_capacity: 500, current_load: 420, unit: GPM]
+S-111 -> FEEDS -> UPW-F-02 [max_capacity: 500, current_load: 420, unit: GPM]
+
+## 3.4 Pretreatment Filters → RO Trains → Permeate & Reject Tanks → Drain
+
+UPW-F-01 -> SUPPLIES -> UPW-RO-01 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-F-02 -> SUPPLIES -> UPW-RO-02 [max_capacity: 500, current_load: 420, unit: GPM]
+
+UPW-RO-01 -> PERMEATE_TO -> T-2511 [max_capacity: 400, current_load: 350, unit: GPM]
+UPW-RO-02 -> PERMEATE_TO -> T-2511 [max_capacity: 400, current_load: 350, unit: GPM]
+
+UPW-RO-01 -> REJECT_TO -> T-200 [max_capacity: 100, current_load: 70, unit: GPM]
+UPW-RO-02 -> REJECT_TO -> T-200 [max_capacity: 100, current_load: 70, unit: GPM]
+
+T-200 -> DRAINS_TO -> WASTE [max_capacity: 100, current_load: 70, unit: GPM]
+
+T-2511 -> SUPPLIES -> UPW-TK-02 [max_capacity: 500, current_load: 420, unit: GPM]
+
+## 3.5 Permeate tank → EDI → Primary Mixed Bed Polisher → UPW storage
+
+UPW-TK-02 -> SUPPLIES -> UPW-EDI-01 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-TK-02 -> SUPPLIES -> UPW-EDI-02 [max_capacity: 500, current_load: 420, unit: GPM]
+
+UPW-EDI-01 -> FEEDS -> MB-3411 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-EDI-02 -> FEEDS -> MB-3411 [max_capacity: 500, current_load: 420, unit: GPM]
+
+MB-3411 -> SUPPLIES -> UPW-TK-03 [max_capacity: 500, current_load: 420, unit: GPM]
+
+## 3.6 UPW circulation
+
+UPW-TK-03 -> SUPPLIES -> UPW-P-03 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-TK-03 -> SUPPLIES -> UPW-P-04 [max_capacity: 500, current_load: 420, unit: GPM]
+
+UPW-P-03 -> SUPPLIES -> UPW-HDR-01 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-P-04 -> SUPPLIES -> UPW-HDR-01 [max_capacity: 500, current_load: 420, unit: GPM]
+
+## 3.7 Main UPW header → loops
+
+UPW-HDR-01 -> DISTRIBUTES_TO -> UPW-LOOP-A [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-HDR-01 -> DISTRIBUTES_TO -> UPW-LOOP-B [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-HDR-01 -> DISTRIBUTES_TO -> UPW-LOOP-C [max_capacity: 500, current_load: 420, unit: GPM]
+
+
+## 3.7 UPW loops → POU
+
+UPW-LOOP-A -> FEEDS -> UPW-POU-01 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-LOOP-A -> FEEDS -> UPW-POU-02 [max_capacity: 500, current_load: 420, unit: GPM]
+
+UPW-LOOP-B -> FEEDS -> UPW-POU-03 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-LOOP-B -> FEEDS -> UPW-POU-04 [max_capacity: 500, current_load: 420, unit: GPM]
+
+UPW-LOOP-C -> FEEDS -> UPW-POU-05 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-LOOP-C -> FEEDS -> UPW-POU-06 [max_capacity: 500, current_load: 420, unit: GPM]
+
+
+## 3.8 UPW return paths
+
+UPW-LOOP-A -> RETURNS_TO -> UPW-TK-03 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-LOOP-B -> RETURNS_TO -> UPW-TK-03 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-LOOP-C -> RETURNS_TO -> UPW-TK-03 [max_capacity: 500, current_load: 420, unit: GPM]
+
+
+## 3.9 UPW loop cross-connects
+
+UPW-LOOP-A -> FEEDS -> UPW-LOOP-B [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-LOOP-B -> FEEDS -> UPW-LOOP-C [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-LOOP-C -> FEEDS -> UPW-LOOP-A [max_capacity: 500, current_load: 420, unit: GPM]
+
+These represent representative distribution cross-connects/
+alternate routing capability.
+
+They should NOT be interpreted as simultaneous normal-flow directions.
+They exist to model potential alternate supply paths.
+
+---
+
+# 4. CHW ADJACENCY LIST
+
+## 4.1 Cooling towers → condenser water pumps
+
+CHW-CT-01 -> SUPPLIES -> CHW-P-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CT-02 -> SUPPLIES -> CHW-P-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CT-03 -> SUPPLIES -> CHW-P-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CT-04 -> SUPPLIES -> CHW-P-04 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 4.2 Condenser pumps → chillers
+
+CHW-P-01 -> FEEDS -> CHW-CH-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-02 -> FEEDS -> CHW-CH-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-03 -> FEEDS -> CHW-CH-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-04 -> FEEDS -> CHW-CH-04 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+Representative cross-connect capability:
+
+CHW-P-01 -> FEEDS -> CHW-CH-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-02 -> FEEDS -> CHW-CH-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-03 -> FEEDS -> CHW-CH-04 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-04 -> FEEDS -> CHW-CH-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 4.3 Chillers → CHW pumps
+
+CHW-CH-01 -> SUPPLIES -> CHW-P-05 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-02 -> SUPPLIES -> CHW-P-06 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-03 -> SUPPLIES -> CHW-P-07 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-04 -> SUPPLIES -> CHW-P-08 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+Additional common-header capability:
+
+CHW-CH-01 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-02 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-03 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-04 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 4.4 CHW pumps → main header
+
+CHW-P-05 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-06 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-07 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-08 -> SUPPLIES -> CHW-HDR-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 4.5 CHW header → zones
+
+CHW-HDR-01 -> DISTRIBUTES_TO -> CHW-ZONE-A [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-HDR-01 -> DISTRIBUTES_TO -> CHW-ZONE-B [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-HDR-01 -> DISTRIBUTES_TO -> CHW-ZONE-C [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 4.6 CHW zones → cooling loads
+
+CHW-ZONE-A -> COOLS -> CHW-AHU-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-ZONE-B -> COOLS -> CHW-AHU-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-ZONE-C -> COOLS -> CHW-AHU-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+CHW-ZONE-A -> SUPPLIES -> CHW-HX-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-ZONE-B -> SUPPLIES -> CHW-HX-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-ZONE-C -> SUPPLIES -> CHW-HX-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 4.7 CHW return paths
+
+CHW-AHU-01 -> RETURNS_TO -> CHW-CH-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-AHU-02 -> RETURNS_TO -> CHW-CH-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-AHU-03 -> RETURNS_TO -> CHW-CH-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+CHW-HX-01 -> RETURNS_TO -> CHW-CH-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-HX-02 -> RETURNS_TO -> CHW-CH-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-HX-03 -> RETURNS_TO -> CHW-CH-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+Representative alternate returns:
+
+CHW-HX-01 -> RETURNS_TO -> CHW-CH-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-HX-02 -> RETURNS_TO -> CHW-CH-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-HX-03 -> RETURNS_TO -> CHW-CH-04 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+# 5. PROCESS TOOL DEPENDENCIES
+
+## 5.1 CMP
+
+UPW-POU-01 -> SUPPLIES -> TOOL-CMP-01 [max_capacity: 500, current_load: 420, unit: GPM]
+CHW-HX-01 -> COOLS -> TOOL-CMP-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+UPW-POU-02 -> SUPPLIES -> TOOL-CMP-02 [max_capacity: 500, current_load: 420, unit: GPM]
+CHW-HX-01 -> COOLS -> TOOL-CMP-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 5.2 Wet clean
+
+UPW-POU-03 -> SUPPLIES -> TOOL-WC-01 [max_capacity: 500, current_load: 420, unit: GPM]
+CHW-HX-02 -> COOLS -> TOOL-WC-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+UPW-POU-04 -> SUPPLIES -> TOOL-WC-02 [max_capacity: 500, current_load: 420, unit: GPM]
+CHW-HX-02 -> COOLS -> TOOL-WC-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 5.3 Etch
+
+CHW-HX-03 -> COOLS -> TOOL-ETCH-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-HX-03 -> COOLS -> TOOL-ETCH-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 5.4 Deposition
+
+CHW-HX-02 -> COOLS -> TOOL-DEP-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 5.5 Lithography
+
+UPW-POU-05 -> SUPPLIES -> TOOL-LITHO-01 [max_capacity: 500, current_load: 420, unit: GPM]
+CHW-HX-01 -> COOLS -> TOOL-LITHO-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+## 5.6 Metrology
+
+UPW-POU-06 -> SUPPLIES -> TOOL-MET-01 [max_capacity: 500, current_load: 420, unit: GPM]
+CHW-HX-03 -> COOLS -> TOOL-MET-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+# 6. ELECTRICAL DEPENDENCIES
+
+## 6.1 Transformer → MCC
+
+TX-01 -> POWERS -> MCC-01 [max_capacity: 2500, current_load: 1850, unit: kW]
+TX-02 -> POWERS -> MCC-02 [max_capacity: 2500, current_load: 1850, unit: kW]
+
+
+## 6.2 MCC-01 dependencies
+
+MCC-01 -> POWERS -> UPW-P-01 [max_capacity: 2500, current_load: 1850, unit: kW]
+MCC-01 -> POWERS -> UPW-P-04 [max_capacity: 2500, current_load: 1850, unit: kW]
+
+MCC-01 -> POWERS -> CHW-P-05 [max_capacity: 2500, current_load: 1850, unit: kW]
+MCC-01 -> POWERS -> CHW-P-07 [max_capacity: 2500, current_load: 1850, unit: kW]
+
+
+## 6.3 MCC-02 dependencies
+
+MCC-02 -> POWERS -> UPW-P-02 [max_capacity: 2500, current_load: 1850, unit: kW]
+MCC-02 -> POWERS -> UPW-P-03 [max_capacity: 2500, current_load: 1850, unit: kW]
+
+MCC-02 -> POWERS -> CHW-P-06 [max_capacity: 2500, current_load: 1850, unit: kW]
+MCC-02 -> POWERS -> CHW-P-08 [max_capacity: 2500, current_load: 1850, unit: kW]
+
+
+# 7. CONTROL DEPENDENCIES
+
+PLC-UPW-01 -> CONTROLS -> UPW-P-01 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-UPW-01 -> CONTROLS -> UPW-P-02 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-UPW-01 -> CONTROLS -> UPW-P-03 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-UPW-01 -> CONTROLS -> UPW-P-04 [latency_ms: 12, protocol: Modbus_TCP]
+
+PLC-CHW-01 -> CONTROLS -> CHW-P-01 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-CHW-01 -> CONTROLS -> CHW-P-02 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-CHW-01 -> CONTROLS -> CHW-P-03 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-CHW-01 -> CONTROLS -> CHW-P-04 [latency_ms: 12, protocol: Modbus_TCP]
+
+PLC-CHW-01 -> CONTROLS -> CHW-P-05 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-CHW-01 -> CONTROLS -> CHW-P-06 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-CHW-01 -> CONTROLS -> CHW-P-07 [latency_ms: 12, protocol: Modbus_TCP]
+PLC-CHW-01 -> CONTROLS -> CHW-P-08 [latency_ms: 12, protocol: Modbus_TCP]
+
+
+# 8. BACKUP / REDUNDANCY RELATIONSHIPS
+
+UPW-P-02 -> BACKUP_FOR -> UPW-P-01 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-P-01 -> BACKUP_FOR -> UPW-P-02 [max_capacity: 500, current_load: 420, unit: GPM]
+
+UPW-P-04 -> BACKUP_FOR -> UPW-P-03 [max_capacity: 500, current_load: 420, unit: GPM]
+UPW-P-03 -> BACKUP_FOR -> UPW-P-04 [max_capacity: 500, current_load: 420, unit: GPM]
+
+CHW-CH-04 -> BACKUP_FOR -> CHW-CH-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-04 -> BACKUP_FOR -> CHW-CH-02 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-CH-04 -> BACKUP_FOR -> CHW-CH-03 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+CHW-P-08 -> BACKUP_FOR -> CHW-P-05 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-08 -> BACKUP_FOR -> CHW-P-06 [max_capacity: 1200, current_load: 850, unit: Tons]
+CHW-P-08 -> BACKUP_FOR -> CHW-P-07 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+
+# 9. IMPORTANT GRAPH INTERPRETATION RULES
+
+## 9.1 Redundancy
+
+A backup relationship does NOT automatically mean the backup is
+currently carrying flow.
+
+It means the asset represents a potential alternate/standby capability.
+
+Failure analysis must consider whether an alternate operational path exists.
+
+---
+
+## 9.2 Cross-connects
+
+Relationships such as:
+
+UPW-LOOP-A -> FEEDS -> UPW-LOOP-B [max_capacity: 500, current_load: 420, unit: GPM]
+
+represent possible alternate routing.
+
+They should not automatically be interpreted as simultaneous normal flow.
+
+---
+
+## 9.3 Return paths
+
+Return relationships create intentional graph cycles.
+
+For example:
+
+UPW-TK-03
+→ UPW-P-03
+→ UPW-HDR-01
+→ UPW-LOOP-A
+→ UPW-TK-03
+
+This is an intentional utility circulation loop.
+
+---
+
+# 10. FAILURE ANALYSIS USE CASES
+
+The AI agent should be able to reason about the graph.
+
+## Scenario A — Single pump failure
+
+Input:
+
+"UPW-P-01 fails."
+
+Agent should determine:
+
+- UPW-P-02 is an alternate feed pump.
+- UPW generation may remain available.
+- Determine whether downstream UPW supply paths remain connected.
+- Identify process tools that could ultimately be affected.
+
+Do NOT automatically conclude that every downstream tool fails.
+
+---
+
+## Scenario B — Dual pump failure
+
+Input:
+
+"UPW-P-01 and UPW-P-02 both fail."
+
+Agent should determine:
+
+- Raw-water feed capability is lost.
+- No alternate feed pump remains.
+- Upstream UPW generation is impaired.
+- Determine downstream impact based on remaining stored UPW and circulation capability.
+
+---
+
+## Scenario C — Chiller failure
+
+Input:
+
+"CHW-CH-01 fails."
+
+Agent should:
+
+1. Find downstream dependencies.
+2. Check common CHW header connectivity.
+3. Identify alternate chillers.
+4. Determine whether available cooling capacity remains.
+5. Identify process loads with CHW dependency.
+6. Identify loads with alternate cooling paths.
+
+---
+
+## Scenario D — MCC failure
+
+Input:
+
+"MCC-01 fails."
+
+Agent should identify:
+
+MCC-01
+→ UPW-P-01
+→ UPW system
+
+MCC-01
+→ UPW-P-04
+→ UPW system
+
+MCC-01
+→ CHW-P-05
+→ CHW system
+
+MCC-01
+→ CHW-P-07
+→ CHW system
+
+Therefore one electrical failure can affect BOTH UPW and CHW.
+
+This is a key common-point-of-failure demonstration.
+
+---
+
+# 11. HIGH-VALUE AI QUESTIONS
+
+The graph should support:
+
+1. What supplies CMP-01?
+
+2. What upstream assets does CMP-01 depend on?
+
+3. Which tools depend on both UPW and CHW?
+
+4. Which assets supply the greatest number of process loads?
+
+5. What happens if UPW-P-01 fails?
+
+6. What happens if UPW-P-01 and UPW-P-02 fail?
+
+7. What happens if CHW-CH-01 fails?
+
+8. Which process tools depend on CHW-CH-01?
+
+9. Which assets are common points of failure for CMP-01 and TOOL-WC-01?
+
+10. Which electrical assets affect both UPW and CHW?
+
+11. If MCC-01 fails, what process tools are potentially affected?
+
+12. Which process tools still have a viable utility path after CHW-CH-01 fails?
+
+13. Which assets have redundant upstream paths?
+
+14. Which assets are single points of failure?
+
+15. What is the shortest dependency path from TX-01 to CMP-01?
+
+16. What are all upstream dependencies of TOOL-LITHO-01?
+
+17. What are all downstream consumers of UPW-TK-03?
+
+18. What assets belong to the same dependency cluster?
+
+19. Which failure would affect the largest number of process loads?
+
+20. What combination of two asset failures creates the greatest downstream impact?
+
+---
+
+# 12. AGENT REASONING REQUIREMENTS
+
+The AI agent should distinguish:
+
+### Direct dependency
+
+A directly connected relationship.
+
+Example:
+
+CHW-HX-01 -> COOLS -> TOOL-CMP-01 [max_capacity: 1200, current_load: 850, unit: Tons]
+
+### Indirect dependency
+
+A dependency several hops upstream.
+
+Example:
+
+TOOL-CMP-01
+→ CHW-HX-01
+→ CHW-ZONE-A
+→ CHW-HDR-01
+→ CHW-P-05
+→ CHW-CH-01
+
+### Alternate dependency
+
+A second valid route to the same required utility.
+
+### Shared dependency
+
+Multiple process tools ultimately depend on the same upstream asset.
+
+### Single point of failure
+
+An asset for which no viable alternate path exists.
+
+### Redundant asset
+
+An asset with an alternate asset/path capable of maintaining service.
+
+---
+
+# 13. IMPORTANT LIMITATION
+
+This graph is a DEMO MODEL.
+
+It intentionally simplifies:
+
+- flow capacity
+- hydraulic calculations
+- pressure
+- temperature
+- water quality
+- actual valve states
+- actual pipe routing
+- equipment capacity
+- chiller sequencing
+- pump curves
+- control logic
+- actual fab tool utility specifications
+- actual STMicroelectronics facility topology
+
+A future version can add these as node/edge properties.
+
+---
+
+# 14. FUTURE VERSION IDEAS
+
+Potential v2 properties:
+
+Asset:
+
+- status
+- capacity
+- design_capacity
+- operating_capacity
+- redundancy_mode
+- criticality
+- location
+- utility_type
+- manufacturer
+- maintenance_state
+
+Relationship:
+
+- capacity
+- normal_flow
+- backup_flow
+- normally_open
+- normally_closed
+- criticality
+- priority
+- physical_connection
+- logical_dependency
+
+This would allow more advanced AI-agent reasoning such as:
+
+"If CHW-CH-01 fails, can the remaining chillers satisfy the required
+cooling demand?"
+
+rather than merely:
+
+"Is there another graph path?"
+
+---
+
+# END OF adjacency_list_v1

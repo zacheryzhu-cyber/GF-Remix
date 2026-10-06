@@ -1,0 +1,10 @@
+{
+  "name": "Remix V00 GF Share",
+  "description": "AI-enabled Facilities Operation Management System for semiconductor fabs covering automated shift reporting, ticket lifecycle tracking, CPK and cleanroom trend analytics, IEC 62682 industrial alarm monitoring with guided OCAP actions, N+1 redundancy, and emergency response management.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

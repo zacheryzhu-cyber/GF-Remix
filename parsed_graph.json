@@ -1,0 +1,1822 @@
+{
+  "nodes": [
+    {
+      "id": "UPW-TK-01",
+      "type": "Tank",
+      "name": "Raw Water / Feed Tank"
+    },
+    {
+      "id": "UPW-P-01",
+      "type": "Pump",
+      "name": "Raw Water Feed Pump 01"
+    },
+    {
+      "id": "UPW-P-02",
+      "type": "Pump",
+      "name": "Raw Water Feed Pump 02"
+    },
+    {
+      "id": "MMF",
+      "type": "Filter",
+      "name": "Multi-Media Filter Bank"
+    },
+    {
+      "id": "SAC-0911",
+      "type": "CationExchanger",
+      "name": "Strong Acid Cation Exchanger 0911"
+    },
+    {
+      "id": "SAC-0912",
+      "type": "CationExchanger",
+      "name": "Strong Acid Cation Exchanger 0912"
+    },
+    {
+      "id": "SAC-0913",
+      "type": "CationExchanger",
+      "name": "Strong Acid Cation Exchanger 0913"
+    },
+    {
+      "id": "SAC-0914",
+      "type": "CationExchanger",
+      "name": "Strong Acid Cation Exchanger 0914"
+    },
+    {
+      "id": "S-091",
+      "type": "ChemicalStorage",
+      "name": "Cation Regeneration Acid Storage System"
+    },
+    {
+      "id": "S-121",
+      "type": "Pump",
+      "name": "Cation Regeneration Pump"
+    },
+    {
+      "id": "T-1011",
+      "type": "Tank",
+      "name": "Pre-Treated Water Storage Tank 1011"
+    },
+    {
+      "id": "T-1012",
+      "type": "Tank",
+      "name": "Pre-Treated Water Storage Tank 1012"
+    },
+    {
+      "id": "S-111",
+      "type": "Pump",
+      "name": "Pre-Treated Water Transfer Pump"
+    },
+    {
+      "id": "S-131",
+      "type": "ChemicalDosing",
+      "name": "Bisulfite Injection System"
+    },
+    {
+      "id": "S-0511",
+      "type": "ChemicalDosing",
+      "name": "Caustic Injection System"
+    },
+    {
+      "id": "UPW-F-01",
+      "type": "Filter",
+      "name": "Pretreatment Filter 01"
+    },
+    {
+      "id": "UPW-F-02",
+      "type": "Filter",
+      "name": "Pretreatment Filter 02"
+    },
+    {
+      "id": "UPW-RO-01",
+      "type": "RO",
+      "name": "Reverse Osmosis Train 01"
+    },
+    {
+      "id": "UPW-RO-02",
+      "type": "RO",
+      "name": "Reverse Osmosis Train 02"
+    },
+    {
+      "id": "T-2511",
+      "type": "Tank",
+      "name": "RO Product Storage Tank"
+    },
+    {
+      "id": "T-200",
+      "type": "Tank",
+      "name": "RO Reject Storage Tank"
+    },
+    {
+      "id": "WASTE",
+      "type": "DrainDestination",
+      "name": "Waste Drain Destination"
+    },
+    {
+      "id": "UPW-TK-02",
+      "type": "Tank",
+      "name": "RO Permeate Tank"
+    },
+    {
+      "id": "UPW-EDI-01",
+      "type": "EDI",
+      "name": "Electrodeionization Train 01"
+    },
+    {
+      "id": "UPW-EDI-02",
+      "type": "EDI",
+      "name": "Electrodeionization Train 02"
+    },
+    {
+      "id": "MB-3411",
+      "type": "MixedBedPolisher",
+      "name": "Primary Mixed Bed Polisher 3411"
+    },
+    {
+      "id": "UPW-TK-03",
+      "type": "Tank",
+      "name": "UPW Storage Tank"
+    },
+    {
+      "id": "UPW-P-03",
+      "type": "Pump",
+      "name": "UPW Circulation Pump 03"
+    },
+    {
+      "id": "UPW-P-04",
+      "type": "Pump",
+      "name": "UPW Circulation Pump 04"
+    },
+    {
+      "id": "UPW-HDR-01",
+      "type": "Header",
+      "name": "Main UPW Distribution Header"
+    },
+    {
+      "id": "UPW-LOOP-A",
+      "type": "DistributionLoop",
+      "name": "UPW Distribution Loop A"
+    },
+    {
+      "id": "UPW-LOOP-B",
+      "type": "DistributionLoop",
+      "name": "UPW Distribution Loop B"
+    },
+    {
+      "id": "UPW-LOOP-C",
+      "type": "DistributionLoop",
+      "name": "UPW Distribution Loop C"
+    },
+    {
+      "id": "UPW-POU-01",
+      "type": "POU",
+      "name": "Point of Use A01"
+    },
+    {
+      "id": "UPW-POU-02",
+      "type": "POU",
+      "name": "Point of Use A02"
+    },
+    {
+      "id": "UPW-POU-03",
+      "type": "POU",
+      "name": "Point of Use B01"
+    },
+    {
+      "id": "UPW-POU-04",
+      "type": "POU",
+      "name": "Point of Use B02"
+    },
+    {
+      "id": "UPW-POU-05",
+      "type": "POU",
+      "name": "Point of Use C01"
+    },
+    {
+      "id": "UPW-POU-06",
+      "type": "POU",
+      "name": "Point of Use C02"
+    },
+    {
+      "id": "CHW-CT-01",
+      "type": "CoolingTower",
+      "name": "Cooling Tower 01"
+    },
+    {
+      "id": "CHW-CT-02",
+      "type": "CoolingTower",
+      "name": "Cooling Tower 02"
+    },
+    {
+      "id": "CHW-CT-03",
+      "type": "CoolingTower",
+      "name": "Cooling Tower 03"
+    },
+    {
+      "id": "CHW-CT-04",
+      "type": "CoolingTower",
+      "name": "Cooling Tower 04"
+    },
+    {
+      "id": "CHW-P-01",
+      "type": "CondenserWaterPump",
+      "name": "Condenser Water Pump 01"
+    },
+    {
+      "id": "CHW-P-02",
+      "type": "CondenserWaterPump",
+      "name": "Condenser Water Pump 02"
+    },
+    {
+      "id": "CHW-P-03",
+      "type": "CondenserWaterPump",
+      "name": "Condenser Water Pump 03"
+    },
+    {
+      "id": "CHW-P-04",
+      "type": "CondenserWaterPump",
+      "name": "Condenser Water Pump 04"
+    },
+    {
+      "id": "CHW-CH-01",
+      "type": "Chiller",
+      "name": "Chiller 01"
+    },
+    {
+      "id": "CHW-CH-02",
+      "type": "Chiller",
+      "name": "Chiller 02"
+    },
+    {
+      "id": "CHW-CH-03",
+      "type": "Chiller",
+      "name": "Chiller 03"
+    },
+    {
+      "id": "CHW-CH-04",
+      "type": "Chiller",
+      "name": "Chiller 04"
+    },
+    {
+      "id": "CHW-P-05",
+      "type": "CHWPump",
+      "name": "Chilled Water Pump 05"
+    },
+    {
+      "id": "CHW-P-06",
+      "type": "CHWPump",
+      "name": "Chilled Water Pump 06"
+    },
+    {
+      "id": "CHW-P-07",
+      "type": "CHWPump",
+      "name": "Chilled Water Pump 07"
+    },
+    {
+      "id": "CHW-P-08",
+      "type": "CHWPump",
+      "name": "Chilled Water Pump 08"
+    },
+    {
+      "id": "CHW-HDR-01",
+      "type": "Header",
+      "name": "Main CHW Distribution Header"
+    },
+    {
+      "id": "CHW-ZONE-A",
+      "type": "DistributionZone",
+      "name": "CHW Distribution Zone A"
+    },
+    {
+      "id": "CHW-ZONE-B",
+      "type": "DistributionZone",
+      "name": "CHW Distribution Zone B"
+    },
+    {
+      "id": "CHW-ZONE-C",
+      "type": "DistributionZone",
+      "name": "CHW Distribution Zone C"
+    },
+    {
+      "id": "CHW-AHU-01",
+      "type": "CoolingLoad",
+      "name": "Cleanroom/AHU Cooling Load A"
+    },
+    {
+      "id": "CHW-AHU-02",
+      "type": "CoolingLoad",
+      "name": "Cleanroom/AHU Cooling Load B"
+    },
+    {
+      "id": "CHW-AHU-03",
+      "type": "CoolingLoad",
+      "name": "Cleanroom/AHU Cooling Load C"
+    },
+    {
+      "id": "CHW-HX-01",
+      "type": "HeatExchanger",
+      "name": "Process Cooling HX 01"
+    },
+    {
+      "id": "CHW-HX-02",
+      "type": "HeatExchanger",
+      "name": "Process Cooling HX 02"
+    },
+    {
+      "id": "CHW-HX-03",
+      "type": "HeatExchanger",
+      "name": "Process Cooling HX 03"
+    },
+    {
+      "id": "TOOL-CMP-01",
+      "type": "ProcessTool",
+      "name": "CMP Tool 01"
+    },
+    {
+      "id": "TOOL-CMP-02",
+      "type": "ProcessTool",
+      "name": "CMP Tool 02"
+    },
+    {
+      "id": "TOOL-WC-01",
+      "type": "ProcessTool",
+      "name": "Wet Clean Tool 01"
+    },
+    {
+      "id": "TOOL-WC-02",
+      "type": "ProcessTool",
+      "name": "Wet Clean Tool 02"
+    },
+    {
+      "id": "TOOL-ETCH-01",
+      "type": "ProcessTool",
+      "name": "Etch Tool 01"
+    },
+    {
+      "id": "TOOL-ETCH-02",
+      "type": "ProcessTool",
+      "name": "Etch Tool 02"
+    },
+    {
+      "id": "TOOL-DEP-01",
+      "type": "ProcessTool",
+      "name": "Deposition Tool 01"
+    },
+    {
+      "id": "TOOL-LITHO-01",
+      "type": "ProcessTool",
+      "name": "Lithography Tool 01"
+    },
+    {
+      "id": "TOOL-MET-01",
+      "type": "ProcessTool",
+      "name": "Metrology / Inspection Tool 01"
+    },
+    {
+      "id": "TX-01",
+      "type": "Transformer",
+      "name": "Utility Transformer 01"
+    },
+    {
+      "id": "TX-02",
+      "type": "Transformer",
+      "name": "Utility Transformer 02"
+    },
+    {
+      "id": "MCC-01",
+      "type": "MCC",
+      "name": "Motor Control Center 01"
+    },
+    {
+      "id": "MCC-02",
+      "type": "MCC",
+      "name": "Motor Control Center 02"
+    },
+    {
+      "id": "PLC-UPW-01",
+      "type": "PLC",
+      "name": "UPW Control PLC"
+    },
+    {
+      "id": "PLC-CHW-01",
+      "type": "PLC",
+      "name": "CHW Control PLC"
+    }
+  ],
+  "edges": [
+    {
+      "source": "UPW-TK-01",
+      "relation": "SUPPLIES",
+      "target": "UPW-P-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-TK-01",
+      "relation": "SUPPLIES",
+      "target": "UPW-P-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-P-01",
+      "relation": "FEEDS",
+      "target": "MMF",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-P-02",
+      "relation": "FEEDS",
+      "target": "MMF",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "MMF",
+      "relation": "FEEDS",
+      "target": "SAC-0911",
+      "properties": {
+        "max_capacity": 150,
+        "current_load": 125,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "MMF",
+      "relation": "FEEDS",
+      "target": "SAC-0912",
+      "properties": {
+        "max_capacity": 150,
+        "current_load": 125,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "MMF",
+      "relation": "FEEDS",
+      "target": "SAC-0913",
+      "properties": {
+        "max_capacity": 150,
+        "current_load": 125,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "MMF",
+      "relation": "FEEDS",
+      "target": "SAC-0914",
+      "properties": {
+        "max_capacity": 150,
+        "current_load": 125,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "S-091",
+      "relation": "SUPPLIES",
+      "target": "S-121",
+      "properties": {
+        "max_capacity": 50,
+        "current_load": 25,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "S-121",
+      "relation": "REGENERATES",
+      "target": "SAC-0911",
+      "properties": {
+        "medium": "Acid Regen"
+      }
+    },
+    {
+      "source": "S-121",
+      "relation": "REGENERATES",
+      "target": "SAC-0912",
+      "properties": {
+        "medium": "Acid Regen"
+      }
+    },
+    {
+      "source": "S-121",
+      "relation": "REGENERATES",
+      "target": "SAC-0913",
+      "properties": {
+        "medium": "Acid Regen"
+      }
+    },
+    {
+      "source": "S-121",
+      "relation": "REGENERATES",
+      "target": "SAC-0914",
+      "properties": {
+        "medium": "Acid Regen"
+      }
+    },
+    {
+      "source": "SAC-0911",
+      "relation": "FEEDS",
+      "target": "T-1011",
+      "properties": {
+        "max_capacity": 250,
+        "current_load": 210,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "SAC-0912",
+      "relation": "FEEDS",
+      "target": "T-1011",
+      "properties": {
+        "max_capacity": 250,
+        "current_load": 210,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "SAC-0913",
+      "relation": "FEEDS",
+      "target": "T-1012",
+      "properties": {
+        "max_capacity": 250,
+        "current_load": 210,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "SAC-0914",
+      "relation": "FEEDS",
+      "target": "T-1012",
+      "properties": {
+        "max_capacity": 250,
+        "current_load": 210,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "T-1011",
+      "relation": "SUPPLIES",
+      "target": "S-111",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "T-1012",
+      "relation": "SUPPLIES",
+      "target": "S-111",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "S-131",
+      "relation": "INJECTS_INTO",
+      "target": "S-111",
+      "properties": {
+        "medium": "NaHSO3 Bisulfite"
+      }
+    },
+    {
+      "source": "S-0511",
+      "relation": "INJECTS_INTO",
+      "target": "S-111",
+      "properties": {
+        "medium": "NaOH Caustic"
+      }
+    },
+    {
+      "source": "S-111",
+      "relation": "FEEDS",
+      "target": "UPW-F-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "S-111",
+      "relation": "FEEDS",
+      "target": "UPW-F-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-F-01",
+      "relation": "SUPPLIES",
+      "target": "UPW-RO-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-F-02",
+      "relation": "SUPPLIES",
+      "target": "UPW-RO-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-RO-01",
+      "relation": "PERMEATE_TO",
+      "target": "T-2511",
+      "properties": {
+        "max_capacity": 400,
+        "current_load": 350,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-RO-02",
+      "relation": "PERMEATE_TO",
+      "target": "T-2511",
+      "properties": {
+        "max_capacity": 400,
+        "current_load": 350,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-RO-01",
+      "relation": "REJECT_TO",
+      "target": "T-200",
+      "properties": {
+        "max_capacity": 100,
+        "current_load": 70,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-RO-02",
+      "relation": "REJECT_TO",
+      "target": "T-200",
+      "properties": {
+        "max_capacity": 100,
+        "current_load": 70,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "T-200",
+      "relation": "DRAINS_TO",
+      "target": "WASTE",
+      "properties": {
+        "max_capacity": 100,
+        "current_load": 70,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "T-2511",
+      "relation": "SUPPLIES",
+      "target": "UPW-TK-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-TK-02",
+      "relation": "SUPPLIES",
+      "target": "UPW-EDI-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-TK-02",
+      "relation": "SUPPLIES",
+      "target": "UPW-EDI-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-EDI-01",
+      "relation": "FEEDS",
+      "target": "MB-3411",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-EDI-02",
+      "relation": "FEEDS",
+      "target": "MB-3411",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "MB-3411",
+      "relation": "SUPPLIES",
+      "target": "UPW-TK-03",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-TK-03",
+      "relation": "SUPPLIES",
+      "target": "UPW-P-03",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-TK-03",
+      "relation": "SUPPLIES",
+      "target": "UPW-P-04",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-P-03",
+      "relation": "SUPPLIES",
+      "target": "UPW-HDR-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-P-04",
+      "relation": "SUPPLIES",
+      "target": "UPW-HDR-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-HDR-01",
+      "relation": "DISTRIBUTES_TO",
+      "target": "UPW-LOOP-A",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-HDR-01",
+      "relation": "DISTRIBUTES_TO",
+      "target": "UPW-LOOP-B",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-HDR-01",
+      "relation": "DISTRIBUTES_TO",
+      "target": "UPW-LOOP-C",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-A",
+      "relation": "FEEDS",
+      "target": "UPW-POU-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-A",
+      "relation": "FEEDS",
+      "target": "UPW-POU-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-B",
+      "relation": "FEEDS",
+      "target": "UPW-POU-03",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-B",
+      "relation": "FEEDS",
+      "target": "UPW-POU-04",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-C",
+      "relation": "FEEDS",
+      "target": "UPW-POU-05",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-C",
+      "relation": "FEEDS",
+      "target": "UPW-POU-06",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-A",
+      "relation": "RETURNS_TO",
+      "target": "UPW-TK-03",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-B",
+      "relation": "RETURNS_TO",
+      "target": "UPW-TK-03",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-C",
+      "relation": "RETURNS_TO",
+      "target": "UPW-TK-03",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-A",
+      "relation": "FEEDS",
+      "target": "UPW-LOOP-B",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-B",
+      "relation": "FEEDS",
+      "target": "UPW-LOOP-C",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-LOOP-C",
+      "relation": "FEEDS",
+      "target": "UPW-LOOP-A",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-CT-01",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CT-02",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CT-03",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CT-04",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-04",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-01",
+      "relation": "FEEDS",
+      "target": "CHW-CH-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-02",
+      "relation": "FEEDS",
+      "target": "CHW-CH-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-03",
+      "relation": "FEEDS",
+      "target": "CHW-CH-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-04",
+      "relation": "FEEDS",
+      "target": "CHW-CH-04",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-01",
+      "relation": "FEEDS",
+      "target": "CHW-CH-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-02",
+      "relation": "FEEDS",
+      "target": "CHW-CH-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-03",
+      "relation": "FEEDS",
+      "target": "CHW-CH-04",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-04",
+      "relation": "FEEDS",
+      "target": "CHW-CH-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-01",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-05",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-02",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-06",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-03",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-07",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-04",
+      "relation": "SUPPLIES",
+      "target": "CHW-P-08",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-01",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-02",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-03",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-04",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-05",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-06",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-07",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-08",
+      "relation": "SUPPLIES",
+      "target": "CHW-HDR-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HDR-01",
+      "relation": "DISTRIBUTES_TO",
+      "target": "CHW-ZONE-A",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HDR-01",
+      "relation": "DISTRIBUTES_TO",
+      "target": "CHW-ZONE-B",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HDR-01",
+      "relation": "DISTRIBUTES_TO",
+      "target": "CHW-ZONE-C",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-ZONE-A",
+      "relation": "COOLS",
+      "target": "CHW-AHU-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-ZONE-B",
+      "relation": "COOLS",
+      "target": "CHW-AHU-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-ZONE-C",
+      "relation": "COOLS",
+      "target": "CHW-AHU-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-ZONE-A",
+      "relation": "SUPPLIES",
+      "target": "CHW-HX-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-ZONE-B",
+      "relation": "SUPPLIES",
+      "target": "CHW-HX-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-ZONE-C",
+      "relation": "SUPPLIES",
+      "target": "CHW-HX-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-AHU-01",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-AHU-02",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-AHU-03",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-01",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-02",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-03",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-01",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-02",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-03",
+      "relation": "RETURNS_TO",
+      "target": "CHW-CH-04",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "UPW-POU-01",
+      "relation": "SUPPLIES",
+      "target": "TOOL-CMP-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-HX-01",
+      "relation": "COOLS",
+      "target": "TOOL-CMP-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "UPW-POU-02",
+      "relation": "SUPPLIES",
+      "target": "TOOL-CMP-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-HX-01",
+      "relation": "COOLS",
+      "target": "TOOL-CMP-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "UPW-POU-03",
+      "relation": "SUPPLIES",
+      "target": "TOOL-WC-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-HX-02",
+      "relation": "COOLS",
+      "target": "TOOL-WC-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "UPW-POU-04",
+      "relation": "SUPPLIES",
+      "target": "TOOL-WC-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-HX-02",
+      "relation": "COOLS",
+      "target": "TOOL-WC-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-03",
+      "relation": "COOLS",
+      "target": "TOOL-ETCH-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-03",
+      "relation": "COOLS",
+      "target": "TOOL-ETCH-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-HX-02",
+      "relation": "COOLS",
+      "target": "TOOL-DEP-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "UPW-POU-05",
+      "relation": "SUPPLIES",
+      "target": "TOOL-LITHO-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-HX-01",
+      "relation": "COOLS",
+      "target": "TOOL-LITHO-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "UPW-POU-06",
+      "relation": "SUPPLIES",
+      "target": "TOOL-MET-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-HX-03",
+      "relation": "COOLS",
+      "target": "TOOL-MET-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "TX-01",
+      "relation": "POWERS",
+      "target": "MCC-01",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "TX-02",
+      "relation": "POWERS",
+      "target": "MCC-02",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-01",
+      "relation": "POWERS",
+      "target": "UPW-P-01",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-01",
+      "relation": "POWERS",
+      "target": "UPW-P-04",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-01",
+      "relation": "POWERS",
+      "target": "CHW-P-05",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-01",
+      "relation": "POWERS",
+      "target": "CHW-P-07",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-02",
+      "relation": "POWERS",
+      "target": "UPW-P-02",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-02",
+      "relation": "POWERS",
+      "target": "UPW-P-03",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-02",
+      "relation": "POWERS",
+      "target": "CHW-P-06",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "MCC-02",
+      "relation": "POWERS",
+      "target": "CHW-P-08",
+      "properties": {
+        "max_capacity": 2500,
+        "current_load": 1850,
+        "unit": "kW"
+      }
+    },
+    {
+      "source": "PLC-UPW-01",
+      "relation": "CONTROLS",
+      "target": "UPW-P-01",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-UPW-01",
+      "relation": "CONTROLS",
+      "target": "UPW-P-02",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-UPW-01",
+      "relation": "CONTROLS",
+      "target": "UPW-P-03",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-UPW-01",
+      "relation": "CONTROLS",
+      "target": "UPW-P-04",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-01",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-02",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-03",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-04",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-05",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-06",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-07",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "PLC-CHW-01",
+      "relation": "CONTROLS",
+      "target": "CHW-P-08",
+      "properties": {
+        "latency_ms": 12,
+        "protocol": "Modbus_TCP"
+      }
+    },
+    {
+      "source": "UPW-P-02",
+      "relation": "BACKUP_FOR",
+      "target": "UPW-P-01",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-P-01",
+      "relation": "BACKUP_FOR",
+      "target": "UPW-P-02",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-P-04",
+      "relation": "BACKUP_FOR",
+      "target": "UPW-P-03",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "UPW-P-03",
+      "relation": "BACKUP_FOR",
+      "target": "UPW-P-04",
+      "properties": {
+        "max_capacity": 500,
+        "current_load": 420,
+        "unit": "GPM"
+      }
+    },
+    {
+      "source": "CHW-CH-04",
+      "relation": "BACKUP_FOR",
+      "target": "CHW-CH-01",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-04",
+      "relation": "BACKUP_FOR",
+      "target": "CHW-CH-02",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-CH-04",
+      "relation": "BACKUP_FOR",
+      "target": "CHW-CH-03",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-08",
+      "relation": "BACKUP_FOR",
+      "target": "CHW-P-05",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-08",
+      "relation": "BACKUP_FOR",
+      "target": "CHW-P-06",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    },
+    {
+      "source": "CHW-P-08",
+      "relation": "BACKUP_FOR",
+      "target": "CHW-P-07",
+      "properties": {
+        "max_capacity": 1200,
+        "current_load": 850,
+        "unit": "Tons"
+      }
+    }
+  ]
+}
