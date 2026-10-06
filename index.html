@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Apply saved/system theme before first paint to avoid a flash
+      (function () {
+        try {
+          var t = localStorage.getItem('ix-theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
     <title>GlobalFoundries Concept Fab Twin</title>
     <meta name="description" content="AI-enabled Facilities Operation Management System for semiconductor fabs covering automated shift reporting, ticket lifecycle tracking, CPK and cleanroom trend analytics, IEC 62682 industrial alarm monitoring with guided OCAP actions, N+1 redundancy, and emergency response management." />
     <meta property="og:title" content="GlobalFoundries Concept Fab Twin" />
@@ -29,7 +39,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>

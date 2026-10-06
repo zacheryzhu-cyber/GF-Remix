@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, Globe, ArrowLeft } from 'lucide-react';
+import { Menu, Globe, ArrowLeft, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../hooks/useTheme';
 import { useFacility } from '../context/FacilityContext';
 
 interface HeaderProps {
@@ -13,6 +14,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
     returnToGlobalLanding,
   } = useFacility();
 
+  const { theme, toggleTheme } = useTheme();
   const [currentTime, setCurrentTime] = useState<string>('');
 
   useEffect(() => {
@@ -28,47 +30,56 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 bg-white border-b border-slate-200 shadow-xs">
-      {/* Top Status & Telemetry Bar */}
-      <div className="bg-slate-900 px-4 sm:px-6 py-1.5 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2 border-b border-slate-800">
+    <header className="sticky top-0 z-30 bg-ix-surface border-b border-ix-border">
+      {/* Siemens-style navy app bar */}
+      <div className="h-12 bg-ix-appbar px-4 sm:px-6 flex items-center justify-between text-xs text-slate-300 gap-2">
         <div className="flex items-center gap-3">
           {/* Mobile Menu Hamburger */}
           <button
             onClick={onToggleSidebar}
-            className="md:hidden text-slate-300 hover:text-white p-1 rounded hover:bg-slate-800"
+            className="md:hidden text-slate-300 hover:text-white p-1 rounded-sm hover:bg-white/10"
             title="Toggle Navigation Menu"
           >
             <Menu className="w-4 h-4" />
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            <span className="font-semibold text-slate-200 text-[11px] tracking-wide">
-              FAB-1 AUTOMATION ONLINE
+            <span className="inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            <span className="font-semibold text-white text-[12px] tracking-wide">
+              FAB-1 Automation Online
             </span>
           </div>
         </div>
 
-        {/* Right Info: Live UTC Clock & Shift */}
-        <div className="flex items-center gap-3 text-[11px]">
+        {/* Right Info: Hub link, shift, live clock, theme */}
+        <div className="flex items-center gap-2 text-[11px]">
           <button
             onClick={returnToGlobalLanding}
-            className="flex items-center gap-1.5 bg-emerald-950/80 hover:bg-emerald-900/80 text-emerald-300 hover:text-white px-2.5 py-0.5 rounded-lg border border-emerald-500/50 font-mono transition shadow-xs"
+            className="flex items-center gap-1.5 text-slate-200 hover:text-white hover:bg-white/10 px-2.5 py-1 rounded-sm transition"
             title="Return to Global 3D Earth Management Landing Page"
           >
-            <Globe className="w-3.5 h-3.5 text-emerald-400" />
+            <Globe className="w-3.5 h-3.5 text-emerald-300" />
             <span>Global 3D Hub</span>
           </button>
 
-          <div className="hidden lg:flex items-center gap-2 text-slate-400">
-            <span className="bg-slate-800 text-emerald-300 px-2 py-0.5 rounded font-mono font-medium border border-slate-700">
+          <div className="hidden lg:flex items-center gap-2">
+            <span className="text-emerald-300 px-2 py-0.5 rounded-sm font-medium bg-white/10">
               {shiftReport.shiftType.split(' ')[0]} {shiftReport.shiftType.split(' ')[1]}
             </span>
           </div>
 
-          <div className="font-mono text-slate-200 bg-slate-800/90 px-2.5 py-0.5 rounded border border-slate-700 text-[11px]">
+          <div className="hidden sm:block tabular-nums text-slate-200 px-2.5 py-0.5 text-[11px]">
             {currentTime || '2026-08-30 19:45:00 UTC+8'}
           </div>
+
+          <button
+            onClick={toggleTheme}
+            className="p-1.5 rounded-sm text-slate-200 hover:text-white hover:bg-white/10 transition"
+            title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            aria-label="Toggle light/dark theme"
+          >
+            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
         </div>
       </div>
 
@@ -77,22 +88,22 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
         <div className="flex items-center gap-3">
           <button
             onClick={onToggleSidebar}
-            className="md:hidden p-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50"
+            className="md:hidden p-1.5 rounded-sm border border-ix-border text-ix-text hover:bg-ix-surface-2"
           >
             <Menu className="w-4 h-4" />
           </button>
           <div>
-            <div className="text-xs font-bold text-slate-900 flex items-center gap-2">
+            <div className="text-xs text-ix-text flex items-center gap-2">
               <button
                 onClick={returnToGlobalLanding}
-                className="text-slate-500 hover:text-emerald-600 transition flex items-center gap-1 text-[11px]"
+                className="text-ix-text-2 hover:text-ix-accent transition flex items-center gap-1 text-[11px]"
               >
                 <span>Global Sites</span>
-                <span className="text-slate-300">/</span>
+                <span className="text-ix-border">/</span>
               </button>
-              <span className="text-emerald-700 font-extrabold uppercase">SINGAPORE FAB-1</span>
-              <span className="text-slate-300">/</span>
-              <span className="text-slate-700 uppercase font-semibold">
+              <span className="text-ix-text-2 font-medium">Singapore Fab-1</span>
+              <span className="text-ix-border">/</span>
+              <span className="text-ix-text text-sm font-semibold">
                 {activeTab === 'reports' && 'Shift Handover'}
                 {activeTab === 'cpk' && 'Process Capability (cPk/pPk)'}
                 {activeTab === 'tickets' && 'CMMS Work Orders'}
@@ -119,15 +130,15 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
         <div className="flex items-center gap-2.5">
           <button
             onClick={returnToGlobalLanding}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 hover:bg-emerald-50 hover:text-emerald-800 text-slate-700 text-xs font-semibold border border-slate-200 hover:border-emerald-300 transition"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-sm text-ix-text hover:bg-ix-accent-soft text-xs font-semibold border border-ix-border hover:border-ix-accent transition"
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-slate-500" />
+            <ArrowLeft className="w-3.5 h-3.5 text-ix-text-2" />
             <span>Return to 3D Globe</span>
           </button>
 
-          <div className="hidden md:flex items-center gap-2 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span className="text-[11px] font-bold text-emerald-700 tracking-wider">SYSTEM NOMINAL</span>
+          <div className="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-sm border border-ix-border">
+            <span className="w-2 h-2 rounded-full bg-green-500"></span>
+            <span className="text-[11px] font-semibold text-ix-text-2 tracking-wide">System nominal</span>
           </div>
         </div>
       </div>

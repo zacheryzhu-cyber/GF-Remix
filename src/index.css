@@ -1,16 +1,183 @@
 @import "tailwindcss";
 
+/* Dark theme is toggled by a `dark` class on <html> (see Header + index.html). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Siemens IX-inspired design tokens.
+ * The app is styled with Tailwind's emerald-* (accent) and slate-* (neutral)
+ * utilities, so remapping those scales restyles every view at once.
+ * Semantic --color-ix-* tokens flip with the theme and are used by the shell.
+ */
+@theme {
+  /* Typography: Inter stands in for Siemens Sans */
+  --font-sans: 'Inter', 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Accent: Siemens petrol, replaces emerald */
+  --color-emerald-50: #e6f5f5;
+  --color-emerald-100: #ccebeb;
+  --color-emerald-200: #99d6d6;
+  --color-emerald-300: #5cc4c4;
+  --color-emerald-400: #1fb0b0;
+  --color-emerald-500: #009999;
+  --color-emerald-600: #008080;
+  --color-emerald-700: #006b6b;
+  --color-emerald-800: #005252;
+  --color-emerald-900: #003d3d;
+  --color-emerald-950: #002b2e;
+
+  /* Neutrals: cool blue-grey */
+  --color-slate-50: #f4f6f8;
+  --color-slate-100: #eaeef1;
+  --color-slate-200: #dae0e5;
+  --color-slate-300: #bfc8cf;
+  --color-slate-400: #8996a0;
+  --color-slate-500: #66737d;
+  --color-slate-600: #4c5963;
+  --color-slate-700: #36424b;
+  --color-slate-800: #1f2c36;
+  --color-slate-900: #0f1c28;
+  --color-slate-950: #00111d;
+
+  /* Flat, sharp IX geometry: small radii, no blur, hairline shadows */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+  --radius-2xl: 6px;
+  --radius-3xl: 6px;
+  --blur-xs: 0px;
+  --blur-sm: 0px;
+  --blur-md: 0px;
+  --shadow-2xs: none;
+  --shadow-xs: none;
+  --shadow-sm: 0 1px 2px rgb(0 17 29 / 0.08);
+  --shadow-md: 0 1px 3px rgb(0 17 29 / 0.12);
+  --shadow-lg: 0 2px 6px rgb(0 17 29 / 0.14);
+  --shadow-xl: 0 3px 10px rgb(0 17 29 / 0.16);
+  --shadow-2xl: 0 4px 14px rgb(0 17 29 / 0.2);
+
+  /* Semantic shell tokens (values set per theme below) */
+  --color-ix-bg: var(--ix-bg);
+  --color-ix-surface: var(--ix-surface);
+  --color-ix-surface-2: var(--ix-surface-2);
+  --color-ix-border: var(--ix-border);
+  --color-ix-text: var(--ix-text);
+  --color-ix-text-2: var(--ix-text-2);
+  --color-ix-accent: var(--ix-accent);
+  --color-ix-accent-soft: var(--ix-accent-soft);
+  --color-ix-appbar: var(--ix-appbar);
+}
+
+:root {
+  color-scheme: light;
+  --ix-bg: #f4f6f8;
+  --ix-surface: #ffffff;
+  --ix-surface-2: #eaeef1;
+  --ix-border: #dae0e5;
+  --ix-text: #0f1c28;
+  --ix-text-2: #4c5963;
+  --ix-accent: #009999;
+  --ix-accent-soft: #e6f5f5;
+  --ix-appbar: #000028; /* Siemens deep navy app bar */
+}
+
+:root.dark {
+  color-scheme: dark;
+  --ix-bg: #00111d;
+  --ix-surface: #0f1f2b;
+  --ix-surface-2: #172b39;
+  --ix-border: #243a49;
+  --ix-text: #e8eef2;
+  --ix-text-2: #9fb0bb;
+  --ix-accent: #1fb0b0;
+  --ix-accent-soft: #0b3338;
+  --ix-appbar: #000028;
+}
+
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
+    font-family: var(--font-sans);
+    background-color: var(--ix-bg);
+    color: var(--ix-text);
+    -webkit-font-smoothing: antialiased;
   }
-  
-  .font-mono {
+
+  /* IX uses a proportional face; keep true monospace only for code/inputs */
+  .font-mono:not(pre):not(code):not(textarea):not(kbd) {
+    font-family: var(--font-sans);
+    font-variant-numeric: tabular-nums;
+  }
+  pre, code, kbd, textarea.font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
+
+  :focus-visible {
+    outline: 2px solid var(--ix-accent);
+    outline-offset: 1px;
+  }
 }
+
+/*
+ * Dark theme. The views use fixed slate/white utilities for light surfaces,
+ * so re-point only the light-surface and dark-text utilities. Utilities for
+ * intentionally dark panels (slate-800/900/950, text-white) are left alone.
+ */
+.dark .bg-white,
+.dark .hover\:bg-white:hover { background-color: var(--ix-surface); }
+.dark .bg-slate-50,
+.dark .hover\:bg-slate-50:hover { background-color: var(--ix-bg); }
+.dark .bg-slate-100,
+.dark .hover\:bg-slate-100:hover { background-color: var(--ix-surface-2); }
+.dark .bg-slate-200 { background-color: var(--ix-border); }
+.dark .bg-white\/80,
+.dark .bg-white\/90 { background-color: color-mix(in srgb, var(--ix-surface) 90%, transparent); }
+.dark [class*="bg-slate-50/"] { background-color: color-mix(in srgb, var(--ix-bg) 70%, transparent); }
+.dark [class*="bg-slate-100/"] { background-color: color-mix(in srgb, var(--ix-surface-2) 85%, transparent); }
+.dark [class*="bg-emerald-50/"],
+.dark .bg-emerald-100,
+.dark [class*="bg-emerald-100/"] { background-color: var(--ix-accent-soft); }
+.dark [class*="bg-indigo-50/"],
+.dark [class*="bg-blue-50/"] { background-color: #10283a; }
+.dark [class*="bg-rose-50/"],
+.dark [class*="bg-red-50/"],
+.dark [class*="bg-red-100/"] { background-color: #3a1519; }
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300,
+.dark .divide-slate-100 > :not(:last-child),
+.dark .divide-slate-200 > :not(:last-child) { border-color: var(--ix-border); }
+
+.dark .text-slate-900,
+.dark .text-slate-800 { color: var(--ix-text); }
+.dark .text-slate-700,
+.dark .text-slate-600 { color: var(--ix-text-2); }
+.dark .text-slate-500 { color: #8296a3; }
+.dark .placeholder-slate-400::placeholder,
+.dark .placeholder\:text-slate-400::placeholder { color: #6b808d; }
+
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea { color-scheme: dark; }
+
+/* Soft tinted status chips: keep text readable on dark surfaces */
+.dark .text-indigo-600, .dark .text-indigo-700, .dark .text-blue-600, .dark .text-blue-700 { color: #a5b4fc; }
+.dark .text-emerald-600, .dark .text-emerald-700, .dark .text-emerald-800 { color: var(--color-emerald-300); }
+.dark .text-rose-600, .dark .text-rose-700, .dark .text-red-600, .dark .text-red-700 { color: #fca5a5; }
+.dark .text-amber-600, .dark .text-amber-700, .dark .text-amber-800 { color: #fcd34d; }
+.dark .bg-emerald-50 { background-color: var(--ix-accent-soft); }
+.dark .bg-rose-50, .dark .bg-red-50 { background-color: #3a1519; }
+.dark .bg-amber-50 { background-color: #3a2a0c; }
+.dark .bg-indigo-50, .dark .bg-blue-50, .dark .bg-cyan-50 { background-color: #10283a; }
+/* Recharts grid/axes use hard-coded light strokes */
+.dark .recharts-cartesian-grid line { stroke: var(--ix-border); }
+.dark .recharts-cartesian-axis-line, .dark .recharts-cartesian-axis-tick-line { stroke: var(--ix-border); }
+.dark .recharts-tooltip-wrapper .recharts-default-tooltip { background-color: var(--ix-surface) !important; border-color: var(--ix-border) !important; }
+.dark .border-emerald-200 { border-color: #12575a; }
+.dark .border-rose-200, .dark .border-red-200 { border-color: #6b2229; }
+.dark .border-amber-200 { border-color: #6b4c10; }
 
 /* Custom crisp scrollbar for dark panels */
 .custom-scrollbar::-webkit-scrollbar {
@@ -65,16 +232,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--ix-surface-2);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--ix-border);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--color-slate-400);
 }
 
 @media print {

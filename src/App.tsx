@@ -49,17 +49,17 @@ const MainContent: React.FC = () => {
         {/* Floating AI Query Assistant Quick Launcher */}
         <button
           onClick={() => openAiAssistant()}
-          className="fixed bottom-6 right-6 z-40 bg-emerald-950/80 hover:bg-emerald-900/70 text-emerald-300 hover:text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl shadow-emerald-950/80 flex items-center gap-2 font-bold text-xs border border-emerald-500/50 hover:border-emerald-400 backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95 group"
+          className="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 sm:px-4 sm:py-2.5 rounded-sm shadow-lg flex items-center gap-2 font-semibold text-xs transition-colors group"
           title="Ask Ops Copilot"
         >
-          <Sparkles className="w-4 h-4 text-emerald-400 group-hover:rotate-12 transition-transform" />
+          <Sparkles className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
           <span className="hidden sm:inline">Ops Copilot</span>
         </button>
 
         {/* Toast Notification Alert Banner */}
         {toastMessage && (
           <div className="fixed bottom-5 right-5 z-50 animate-bounce-short">
-            <div className="bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs">
+            <div className="bg-ix-appbar border-l-4 border-emerald-500 text-white px-4 py-3 rounded-sm shadow-xl flex items-center gap-3 text-xs">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span className="font-medium">{toastMessage}</span>
             </div>
@@ -71,7 +71,7 @@ const MainContent: React.FC = () => {
 
   // 2. Singapore Fab-1 Facility Operations Workspace (5 Primary Modules)
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans flex selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen bg-ix-bg text-ix-text font-sans flex selection:bg-emerald-500 selection:text-white">
       {/* Left Navigation Sidebar */}
       <Sidebar
         isMobileOpen={isMobileSidebarOpen}
@@ -120,17 +120,17 @@ const MainContent: React.FC = () => {
         {/* Floating AI Query Assistant Quick Launcher */}
         <button
           onClick={() => openAiAssistant()}
-          className="fixed bottom-6 right-6 z-40 bg-emerald-950/80 hover:bg-emerald-900/70 text-emerald-300 hover:text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl shadow-emerald-950/80 flex items-center gap-2 font-bold text-xs border border-emerald-500/50 hover:border-emerald-400 backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95 group"
+          className="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 sm:px-4 sm:py-2.5 rounded-sm shadow-lg flex items-center gap-2 font-semibold text-xs transition-colors group"
           title="Ask Ops Copilot"
         >
-          <Sparkles className="w-4 h-4 text-emerald-400 group-hover:rotate-12 transition-transform" />
+          <Sparkles className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
           <span className="hidden sm:inline">Ops Copilot</span>
         </button>
 
         {/* Toast Notification Alert Banner */}
         {toastMessage && (
           <div className="fixed bottom-5 right-5 z-50 animate-bounce-short">
-            <div className="bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs">
+            <div className="bg-ix-appbar border-l-4 border-emerald-500 text-white px-4 py-3 rounded-sm shadow-xl flex items-center gap-3 text-xs">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span className="font-medium">{toastMessage}</span>
             </div>
@@ -138,14 +138,14 @@ const MainContent: React.FC = () => {
         )}
 
         {/* Compliance Footer */}
-        <footer className="border-t border-slate-200 bg-white py-3 px-6 text-xs text-slate-600 mt-auto shadow-xs">
+        <footer className="border-t border-ix-border bg-ix-surface py-3 px-6 text-xs text-ix-text-2 mt-auto">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">FACILITY OPS CENTER</span>
-              <div className="w-px h-3.5 bg-slate-200 hidden sm:block"></div>
-              <span className="font-medium text-slate-700">Lead: {shiftReport.leadEngineer}</span>
-              <div className="w-px h-3.5 bg-slate-200 hidden sm:block"></div>
-              <span className="text-slate-500 font-mono text-[11px]">{shiftReport.shiftType}</span>
+              <span className="text-[10px] font-semibold text-ix-text-2 uppercase tracking-widest">FACILITY OPS CENTER</span>
+              <div className="w-px h-3.5 bg-ix-border hidden sm:block"></div>
+              <span className="font-medium text-ix-text">Lead: {shiftReport.leadEngineer}</span>
+              <div className="w-px h-3.5 bg-ix-border hidden sm:block"></div>
+              <span className="text-ix-text-2 text-[11px]">{shiftReport.shiftType}</span>
             </div>
           </div>
         </footer>
