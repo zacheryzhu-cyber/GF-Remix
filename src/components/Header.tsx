@@ -99,10 +99,10 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
                 className="text-ix-text-2 hover:text-ix-accent transition flex items-center gap-1 text-[11px]"
               >
                 <span>Global Sites</span>
-                <span className="text-ix-border">/</span>
+                <span className="text-ix-text-2 opacity-40">/</span>
               </button>
               <span className="text-ix-text-2 font-medium">Singapore Fab-1</span>
-              <span className="text-ix-border">/</span>
+              <span className="text-ix-text-2 opacity-40">/</span>
               <span className="text-ix-text text-sm font-semibold">
                 {activeTab === 'reports' && 'Shift Handover'}
                 {activeTab === 'cpk' && 'Process Capability (cPk/pPk)'}

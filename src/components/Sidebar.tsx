@@ -80,7 +80,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, setIsMobileOpen 
       label: 'Alarm Management',
       icon: AlertTriangle,
       badge: activeP1Count > 0 ? `${activeP1Count} P1` : null,
-      badgeColor: 'bg-red-500 text-white animate-pulse',
+      badgeColor: 'bg-red-600 text-white animate-pulse',
     },
     {
       id: 'emergency',

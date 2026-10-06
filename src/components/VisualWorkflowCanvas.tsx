@@ -889,7 +889,7 @@ export const VisualWorkflowCanvas: React.FC = () => {
                   width: `${NODE_SIZE}px`,
                   height: `${NODE_SIZE}px`,
                 }}
-                className={`absolute z-10 rounded-xl border flex flex-col items-center justify-between p-1.5 transition-all duration-150 cursor-pointer shadow-md select-none group ${getNodeColorClass(
+                className={`ix-node absolute z-10 rounded-xl border flex flex-col items-center justify-between p-1.5 transition-all duration-150 cursor-pointer shadow-md select-none group ${getNodeColorClass(
                   node.type,
                   isSelected,
                   isSource,
